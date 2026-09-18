@@ -1,0 +1,15 @@
+{
+  "gate_score_min": 0.4,
+  "gate_noul_min": 0.35,
+  "span_noul_min": 0.45,
+  "verify_noul_min": 0.55,
+  "max_candidates": 24,
+  "tuned_on": {
+    "probe_n": 24,
+    "probe_fp": 0,
+    "probe_fn": 0,
+    "probe_rude_fn": 0,
+    "at": "2026-09-18T23:03:37.512Z"
+  },
+  "note": "v2b adjusted after smoke; span/verify slightly raised"
+}

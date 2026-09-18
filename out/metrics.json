@@ -1,0 +1,1185 @@
+{
+  "generated_at": "2026-09-18T23:19:45.777Z",
+  "version": "2b",
+  "methods": {
+    "lexicon": {
+      "test": {
+        "detection": {
+          "n": 543,
+          "tp": 256,
+          "tn": 78,
+          "fp": 0,
+          "fn": 209,
+          "accuracy": 0.6151,
+          "precision": 1,
+          "recall": 0.5505,
+          "f1": 0.7101,
+          "fpr": 0,
+          "fnr": 0.4495
+        },
+        "rewrite": {
+          "exact_match": 0.5654,
+          "exact_match_positive": 0.4925,
+          "n_positive": 465,
+          "mask_char_f1": 0.756,
+          "mask_char_precision": 0.953,
+          "mask_char_recall": 0.6265
+        },
+        "latency_ms": {
+          "p50": 0,
+          "p95": 0,
+          "mean": 0,
+          "n": 543
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0
+        },
+        "estimated_cost_usd": 0,
+        "verify_failed_n": 0,
+        "errors": 0
+      },
+      "real_clean": {
+        "detection": {
+          "n": 200,
+          "tp": 0,
+          "tn": 200,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0,
+          "fpr": 0,
+          "fnr": 0
+        },
+        "rewrite": {
+          "exact_match": 1,
+          "exact_match_positive": null,
+          "n_positive": 0,
+          "mask_char_f1": 0,
+          "mask_char_precision": 0,
+          "mask_char_recall": 0
+        },
+        "latency_ms": {
+          "p50": 0,
+          "p95": 0,
+          "mean": 0,
+          "n": 200
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0
+        },
+        "estimated_cost_usd": 0,
+        "verify_failed_n": 0,
+        "errors": 0
+      },
+      "train": {
+        "detection": {
+          "n": 560,
+          "tp": 287,
+          "tn": 80,
+          "fp": 0,
+          "fn": 193,
+          "accuracy": 0.6554,
+          "precision": 1,
+          "recall": 0.5979,
+          "f1": 0.7484,
+          "fpr": 0,
+          "fnr": 0.4021
+        },
+        "rewrite": {
+          "exact_match": 0.5964,
+          "exact_match_positive": 0.5292,
+          "n_positive": 480,
+          "mask_char_f1": 0.7751,
+          "mask_char_precision": 0.9284,
+          "mask_char_recall": 0.6652
+        },
+        "latency_ms": {
+          "p50": 0,
+          "p95": 0,
+          "mean": 0,
+          "n": 560
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0
+        },
+        "estimated_cost_usd": 0,
+        "verify_failed_n": 0,
+        "errors": 0
+      },
+      "dev": {
+        "detection": {
+          "n": 205,
+          "tp": 112,
+          "tn": 30,
+          "fp": 0,
+          "fn": 63,
+          "accuracy": 0.6927,
+          "precision": 1,
+          "recall": 0.64,
+          "f1": 0.7805,
+          "fpr": 0,
+          "fnr": 0.36
+        },
+        "rewrite": {
+          "exact_match": 0.6439,
+          "exact_match_positive": 0.5829,
+          "n_positive": 175,
+          "mask_char_f1": 0.7958,
+          "mask_char_precision": 0.9414,
+          "mask_char_recall": 0.6892
+        },
+        "latency_ms": {
+          "p50": 0,
+          "p95": 0,
+          "mean": 0,
+          "n": 205
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0
+        },
+        "estimated_cost_usd": 0,
+        "verify_failed_n": 0,
+        "errors": 0
+      },
+      "all_synth": {
+        "detection": {
+          "n": 1308,
+          "tp": 655,
+          "tn": 188,
+          "fp": 0,
+          "fn": 465,
+          "accuracy": 0.6445,
+          "precision": 1,
+          "recall": 0.5848,
+          "f1": 0.738,
+          "fpr": 0,
+          "fnr": 0.4152
+        },
+        "rewrite": {
+          "exact_match": 0.591,
+          "exact_match_positive": 0.5223,
+          "n_positive": 1120,
+          "mask_char_f1": 0.7696,
+          "mask_char_precision": 0.941,
+          "mask_char_recall": 0.651
+        },
+        "latency_ms": {
+          "p50": 0,
+          "p95": 0,
+          "mean": 0,
+          "n": 1308
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0
+        },
+        "estimated_cost_usd": 0,
+        "verify_failed_n": 0,
+        "errors": 0
+      },
+      "rude_public_unsafe_recall": {
+        "n": 70,
+        "tp": 50,
+        "fn": 20,
+        "recall": 0.7143,
+        "exact_match": 0.5571,
+        "by_family": {
+          "rude_not_profane_cs": {
+            "n": 35,
+            "tp": 21,
+            "fn": 14,
+            "recall": 0.6,
+            "exact_match": 0.4571
+          },
+          "rude_not_profane_en": {
+            "n": 35,
+            "tp": 29,
+            "fn": 6,
+            "recall": 0.8286,
+            "exact_match": 0.6571
+          }
+        }
+      },
+      "rude_not_profane_fpr": {
+        "n": 70,
+        "fp": 50,
+        "fpr": 0.7143,
+        "note": "v2b alias: fpr field = recall"
+      },
+      "evasion_families_test": {
+        "obfuscation_spaced": {
+          "n": 28,
+          "tp": 10,
+          "tn": 0,
+          "fp": 0,
+          "fn": 18,
+          "accuracy": 0.3571,
+          "precision": 1,
+          "recall": 0.3571,
+          "f1": 0.5263,
+          "fpr": 0,
+          "fnr": 0.6429
+        },
+        "obfuscation_mixed": {
+          "n": 28,
+          "tp": 0,
+          "tn": 0,
+          "fp": 0,
+          "fn": 28,
+          "accuracy": 0,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0,
+          "fpr": 0,
+          "fnr": 1
+        },
+        "sep_dot_uscore": {
+          "n": 26,
+          "tp": 8,
+          "tn": 0,
+          "fp": 0,
+          "fn": 18,
+          "accuracy": 0.3077,
+          "precision": 1,
+          "recall": 0.3077,
+          "f1": 0.4706,
+          "fpr": 0,
+          "fnr": 0.6923
+        },
+        "partial_self_censor": {
+          "n": 26,
+          "tp": 0,
+          "tn": 0,
+          "fp": 0,
+          "fn": 26,
+          "accuracy": 0,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0,
+          "fpr": 0,
+          "fnr": 1
+        },
+        "repeat_padding": {
+          "n": 24,
+          "tp": 0,
+          "tn": 0,
+          "fp": 0,
+          "fn": 24,
+          "accuracy": 0,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0,
+          "fpr": 0,
+          "fnr": 1
+        },
+        "homoglyph_cyrillic": {
+          "n": 22,
+          "tp": 20,
+          "tn": 0,
+          "fp": 0,
+          "fn": 2,
+          "accuracy": 0.9091,
+          "precision": 1,
+          "recall": 0.9091,
+          "f1": 0.9524,
+          "fpr": 0,
+          "fnr": 0.0909
+        },
+        "zwsp_invisible": {
+          "n": 22,
+          "tp": 22,
+          "tn": 0,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "fpr": 0,
+          "fnr": 0
+        },
+        "typos_adjacency": {
+          "n": 20,
+          "tp": 0,
+          "tn": 0,
+          "fp": 0,
+          "fn": 20,
+          "accuracy": 0,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0,
+          "fpr": 0,
+          "fnr": 1
+        },
+        "foreign_phonetic": {
+          "n": 20,
+          "tp": 1,
+          "tn": 0,
+          "fp": 0,
+          "fn": 19,
+          "accuracy": 0.05,
+          "precision": 1,
+          "recall": 0.05,
+          "f1": 0.0952,
+          "fpr": 0,
+          "fnr": 0.95
+        },
+        "word_inversion_light": {
+          "n": 12,
+          "tp": 0,
+          "tn": 0,
+          "fp": 0,
+          "fn": 12,
+          "accuracy": 0,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0,
+          "fpr": 0,
+          "fnr": 1
+        },
+        "glued_affix": {
+          "n": 24,
+          "tp": 2,
+          "tn": 0,
+          "fp": 0,
+          "fn": 22,
+          "accuracy": 0.0833,
+          "precision": 1,
+          "recall": 0.0833,
+          "f1": 0.1538,
+          "fpr": 0,
+          "fnr": 0.9167
+        }
+      },
+      "scunthorpe_near_miss_test": {
+        "substring_scunthorpe": {
+          "n": 18,
+          "tp": 0,
+          "tn": 18,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0,
+          "fpr": 0,
+          "fnr": 0
+        },
+        "near_miss_clean": {
+          "n": 20,
+          "tp": 0,
+          "tn": 20,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0,
+          "fpr": 0,
+          "fnr": 0
+        }
+      }
+    },
+    "token_scorer": {
+      "test": {
+        "detection": {
+          "n": 543,
+          "tp": 402,
+          "tn": 78,
+          "fp": 0,
+          "fn": 63,
+          "accuracy": 0.884,
+          "precision": 1,
+          "recall": 0.8645,
+          "f1": 0.9273,
+          "fpr": 0,
+          "fnr": 0.1355
+        },
+        "rewrite": {
+          "exact_match": 0.8306,
+          "exact_match_positive": 0.8022,
+          "n_positive": 465,
+          "mask_char_f1": 0.9006,
+          "mask_char_precision": 0.9695,
+          "mask_char_recall": 0.8409
+        },
+        "latency_ms": {
+          "p50": 0,
+          "p95": 0,
+          "mean": 0,
+          "n": 543
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0
+        },
+        "estimated_cost_usd": 0,
+        "verify_failed_n": 0,
+        "errors": 0
+      },
+      "real_clean": {
+        "detection": {
+          "n": 200,
+          "tp": 0,
+          "tn": 200,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0,
+          "fpr": 0,
+          "fnr": 0
+        },
+        "rewrite": {
+          "exact_match": 1,
+          "exact_match_positive": null,
+          "n_positive": 0,
+          "mask_char_f1": 0,
+          "mask_char_precision": 0,
+          "mask_char_recall": 0
+        },
+        "latency_ms": {
+          "p50": 0,
+          "p95": 0,
+          "mean": 0,
+          "n": 200
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0
+        },
+        "estimated_cost_usd": 0,
+        "verify_failed_n": 0,
+        "errors": 0
+      },
+      "train": {
+        "detection": {
+          "n": 560,
+          "tp": 451,
+          "tn": 80,
+          "fp": 0,
+          "fn": 29,
+          "accuracy": 0.9482,
+          "precision": 1,
+          "recall": 0.9396,
+          "f1": 0.9689,
+          "fpr": 0,
+          "fnr": 0.0604
+        },
+        "rewrite": {
+          "exact_match": 0.8518,
+          "exact_match_positive": 0.8271,
+          "n_positive": 480,
+          "mask_char_f1": 0.9284,
+          "mask_char_precision": 0.9402,
+          "mask_char_recall": 0.9169
+        },
+        "latency_ms": {
+          "p50": 0,
+          "p95": 0,
+          "mean": 0,
+          "n": 560
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0
+        },
+        "estimated_cost_usd": 0,
+        "verify_failed_n": 0,
+        "errors": 0
+      },
+      "dev": {
+        "detection": {
+          "n": 205,
+          "tp": 167,
+          "tn": 30,
+          "fp": 0,
+          "fn": 8,
+          "accuracy": 0.961,
+          "precision": 1,
+          "recall": 0.9543,
+          "f1": 0.9766,
+          "fpr": 0,
+          "fnr": 0.0457
+        },
+        "rewrite": {
+          "exact_match": 0.8634,
+          "exact_match_positive": 0.84,
+          "n_positive": 175,
+          "mask_char_f1": 0.9338,
+          "mask_char_precision": 0.9462,
+          "mask_char_recall": 0.9218
+        },
+        "latency_ms": {
+          "p50": 0,
+          "p95": 0,
+          "mean": 0,
+          "n": 205
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0
+        },
+        "estimated_cost_usd": 0,
+        "verify_failed_n": 0,
+        "errors": 0
+      },
+      "all_synth": {
+        "detection": {
+          "n": 1308,
+          "tp": 1020,
+          "tn": 188,
+          "fp": 0,
+          "fn": 100,
+          "accuracy": 0.9235,
+          "precision": 1,
+          "recall": 0.9107,
+          "f1": 0.9533,
+          "fpr": 0,
+          "fnr": 0.0893
+        },
+        "rewrite": {
+          "exact_match": 0.8448,
+          "exact_match_positive": 0.8187,
+          "n_positive": 1120,
+          "mask_char_f1": 0.917,
+          "mask_char_precision": 0.9536,
+          "mask_char_recall": 0.883
+        },
+        "latency_ms": {
+          "p50": 0,
+          "p95": 0,
+          "mean": 0,
+          "n": 1308
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0
+        },
+        "estimated_cost_usd": 0,
+        "verify_failed_n": 0,
+        "errors": 0
+      },
+      "rude_public_unsafe_recall": {
+        "n": 70,
+        "tp": 50,
+        "fn": 20,
+        "recall": 0.7143,
+        "exact_match": 0.5571,
+        "by_family": {
+          "rude_not_profane_cs": {
+            "n": 35,
+            "tp": 21,
+            "fn": 14,
+            "recall": 0.6,
+            "exact_match": 0.4571
+          },
+          "rude_not_profane_en": {
+            "n": 35,
+            "tp": 29,
+            "fn": 6,
+            "recall": 0.8286,
+            "exact_match": 0.6571
+          }
+        }
+      },
+      "rude_not_profane_fpr": {
+        "n": 70,
+        "fp": 50,
+        "fpr": 0.7143,
+        "note": "v2b alias: fpr field = recall"
+      },
+      "evasion_families_test": {
+        "obfuscation_spaced": {
+          "n": 28,
+          "tp": 22,
+          "tn": 0,
+          "fp": 0,
+          "fn": 6,
+          "accuracy": 0.7857,
+          "precision": 1,
+          "recall": 0.7857,
+          "f1": 0.88,
+          "fpr": 0,
+          "fnr": 0.2143
+        },
+        "obfuscation_mixed": {
+          "n": 28,
+          "tp": 25,
+          "tn": 0,
+          "fp": 0,
+          "fn": 3,
+          "accuracy": 0.8929,
+          "precision": 1,
+          "recall": 0.8929,
+          "f1": 0.9434,
+          "fpr": 0,
+          "fnr": 0.1071
+        },
+        "sep_dot_uscore": {
+          "n": 26,
+          "tp": 26,
+          "tn": 0,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "fpr": 0,
+          "fnr": 0
+        },
+        "partial_self_censor": {
+          "n": 26,
+          "tp": 24,
+          "tn": 0,
+          "fp": 0,
+          "fn": 2,
+          "accuracy": 0.9231,
+          "precision": 1,
+          "recall": 0.9231,
+          "f1": 0.96,
+          "fpr": 0,
+          "fnr": 0.0769
+        },
+        "repeat_padding": {
+          "n": 24,
+          "tp": 24,
+          "tn": 0,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "fpr": 0,
+          "fnr": 0
+        },
+        "homoglyph_cyrillic": {
+          "n": 22,
+          "tp": 22,
+          "tn": 0,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "fpr": 0,
+          "fnr": 0
+        },
+        "zwsp_invisible": {
+          "n": 22,
+          "tp": 22,
+          "tn": 0,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "fpr": 0,
+          "fnr": 0
+        },
+        "typos_adjacency": {
+          "n": 20,
+          "tp": 20,
+          "tn": 0,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "fpr": 0,
+          "fnr": 0
+        },
+        "foreign_phonetic": {
+          "n": 20,
+          "tp": 1,
+          "tn": 0,
+          "fp": 0,
+          "fn": 19,
+          "accuracy": 0.05,
+          "precision": 1,
+          "recall": 0.05,
+          "f1": 0.0952,
+          "fpr": 0,
+          "fnr": 0.95
+        },
+        "word_inversion_light": {
+          "n": 12,
+          "tp": 0,
+          "tn": 0,
+          "fp": 0,
+          "fn": 12,
+          "accuracy": 0,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0,
+          "fpr": 0,
+          "fnr": 1
+        },
+        "glued_affix": {
+          "n": 24,
+          "tp": 23,
+          "tn": 0,
+          "fp": 0,
+          "fn": 1,
+          "accuracy": 0.9583,
+          "precision": 1,
+          "recall": 0.9583,
+          "f1": 0.9787,
+          "fpr": 0,
+          "fnr": 0.0417
+        }
+      },
+      "scunthorpe_near_miss_test": {
+        "substring_scunthorpe": {
+          "n": 18,
+          "tp": 0,
+          "tn": 18,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0,
+          "fpr": 0,
+          "fnr": 0
+        },
+        "near_miss_clean": {
+          "n": 20,
+          "tp": 0,
+          "tn": 20,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0,
+          "fpr": 0,
+          "fnr": 0
+        }
+      }
+    },
+    "jev": {
+      "test": {
+        "detection": {
+          "n": 543,
+          "tp": 452,
+          "tn": 76,
+          "fp": 2,
+          "fn": 13,
+          "accuracy": 0.9724,
+          "precision": 0.9956,
+          "recall": 0.972,
+          "f1": 0.9837,
+          "fpr": 0.0256,
+          "fnr": 0.028
+        },
+        "rewrite": {
+          "exact_match": 0.6575,
+          "exact_match_positive": 0.6,
+          "n_positive": 465,
+          "mask_char_f1": 0.8434,
+          "mask_char_precision": 0.856,
+          "mask_char_recall": 0.8311
+        },
+        "latency_ms": {
+          "p50": 593,
+          "p95": 883,
+          "mean": 574,
+          "n": 543
+        },
+        "tokens": {
+          "input": 1310844,
+          "output": 65494
+        },
+        "estimated_cost_usd": 0.0551,
+        "verify_failed_n": 39,
+        "errors": 0
+      },
+      "real_clean": {
+        "detection": {
+          "n": 200,
+          "tp": 0,
+          "tn": 196,
+          "fp": 4,
+          "fn": 0,
+          "accuracy": 0.98,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0,
+          "fpr": 0.02,
+          "fnr": 0
+        },
+        "rewrite": {
+          "exact_match": 1,
+          "exact_match_positive": null,
+          "n_positive": 0,
+          "mask_char_f1": 0,
+          "mask_char_precision": 0,
+          "mask_char_recall": 0
+        },
+        "latency_ms": {
+          "p50": 183,
+          "p95": 320,
+          "mean": 207,
+          "n": 200
+        },
+        "tokens": {
+          "input": 174784,
+          "output": 8082
+        },
+        "estimated_cost_usd": 0.0073,
+        "verify_failed_n": 0,
+        "errors": 0
+      },
+      "train": {
+        "detection": {
+          "n": 560,
+          "tp": 477,
+          "tn": 79,
+          "fp": 1,
+          "fn": 3,
+          "accuracy": 0.9929,
+          "precision": 0.9979,
+          "recall": 0.9938,
+          "f1": 0.9958,
+          "fpr": 0.0125,
+          "fnr": 0.0063
+        },
+        "rewrite": {
+          "exact_match": 0.7036,
+          "exact_match_positive": 0.6542,
+          "n_positive": 480,
+          "mask_char_f1": 0.8247,
+          "mask_char_precision": 0.8489,
+          "mask_char_recall": 0.8019
+        },
+        "latency_ms": {
+          "p50": 541,
+          "p95": 804,
+          "mean": 526,
+          "n": 560
+        },
+        "tokens": {
+          "input": 1365950,
+          "output": 68200
+        },
+        "estimated_cost_usd": 0.0574,
+        "verify_failed_n": 43,
+        "errors": 0
+      },
+      "dev": {
+        "detection": {
+          "n": 205,
+          "tp": 171,
+          "tn": 30,
+          "fp": 0,
+          "fn": 4,
+          "accuracy": 0.9805,
+          "precision": 1,
+          "recall": 0.9771,
+          "f1": 0.9884,
+          "fpr": 0,
+          "fnr": 0.0229
+        },
+        "rewrite": {
+          "exact_match": 0.7171,
+          "exact_match_positive": 0.6686,
+          "n_positive": 175,
+          "mask_char_f1": 0.846,
+          "mask_char_precision": 0.8772,
+          "mask_char_recall": 0.817
+        },
+        "latency_ms": {
+          "p50": 614,
+          "p95": 1051,
+          "mean": 610,
+          "n": 205
+        },
+        "tokens": {
+          "input": 507099,
+          "output": 25522
+        },
+        "estimated_cost_usd": 0.0213,
+        "verify_failed_n": 13,
+        "errors": 0
+      },
+      "all_synth": {
+        "detection": {
+          "n": 1308,
+          "tp": 1100,
+          "tn": 185,
+          "fp": 3,
+          "fn": 20,
+          "accuracy": 0.9824,
+          "precision": 0.9973,
+          "recall": 0.9821,
+          "f1": 0.9897,
+          "fpr": 0.016,
+          "fnr": 0.0179
+        },
+        "rewrite": {
+          "exact_match": 0.6865,
+          "exact_match_positive": 0.6339,
+          "n_positive": 1120,
+          "mask_char_f1": 0.8363,
+          "mask_char_precision": 0.8561,
+          "mask_char_recall": 0.8173
+        },
+        "latency_ms": {
+          "p50": 570,
+          "p95": 896,
+          "mean": 559,
+          "n": 1308
+        },
+        "tokens": {
+          "input": 3183893,
+          "output": 159216
+        },
+        "estimated_cost_usd": 0.1337,
+        "verify_failed_n": 95,
+        "errors": 0
+      },
+      "rude_public_unsafe_recall": {
+        "n": 70,
+        "tp": 69,
+        "fn": 1,
+        "recall": 0.9857,
+        "exact_match": 0.5714,
+        "by_family": {
+          "rude_not_profane_cs": {
+            "n": 35,
+            "tp": 34,
+            "fn": 1,
+            "recall": 0.9714,
+            "exact_match": 0.4571
+          },
+          "rude_not_profane_en": {
+            "n": 35,
+            "tp": 35,
+            "fn": 0,
+            "recall": 1,
+            "exact_match": 0.6857
+          }
+        }
+      },
+      "rude_not_profane_fpr": {
+        "n": 70,
+        "fp": 69,
+        "fpr": 0.9857,
+        "note": "v2b alias: fpr field = recall"
+      },
+      "evasion_families_test": {
+        "obfuscation_spaced": {
+          "n": 28,
+          "tp": 28,
+          "tn": 0,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "fpr": 0,
+          "fnr": 0
+        },
+        "obfuscation_mixed": {
+          "n": 28,
+          "tp": 28,
+          "tn": 0,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "fpr": 0,
+          "fnr": 0
+        },
+        "sep_dot_uscore": {
+          "n": 26,
+          "tp": 26,
+          "tn": 0,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "fpr": 0,
+          "fnr": 0
+        },
+        "partial_self_censor": {
+          "n": 26,
+          "tp": 26,
+          "tn": 0,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "fpr": 0,
+          "fnr": 0
+        },
+        "repeat_padding": {
+          "n": 24,
+          "tp": 24,
+          "tn": 0,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "fpr": 0,
+          "fnr": 0
+        },
+        "homoglyph_cyrillic": {
+          "n": 22,
+          "tp": 21,
+          "tn": 0,
+          "fp": 0,
+          "fn": 1,
+          "accuracy": 0.9545,
+          "precision": 1,
+          "recall": 0.9545,
+          "f1": 0.9767,
+          "fpr": 0,
+          "fnr": 0.0455
+        },
+        "zwsp_invisible": {
+          "n": 22,
+          "tp": 22,
+          "tn": 0,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "fpr": 0,
+          "fnr": 0
+        },
+        "typos_adjacency": {
+          "n": 20,
+          "tp": 18,
+          "tn": 0,
+          "fp": 0,
+          "fn": 2,
+          "accuracy": 0.9,
+          "precision": 1,
+          "recall": 0.9,
+          "f1": 0.9474,
+          "fpr": 0,
+          "fnr": 0.1
+        },
+        "foreign_phonetic": {
+          "n": 20,
+          "tp": 20,
+          "tn": 0,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "fpr": 0,
+          "fnr": 0
+        },
+        "word_inversion_light": {
+          "n": 12,
+          "tp": 8,
+          "tn": 0,
+          "fp": 0,
+          "fn": 4,
+          "accuracy": 0.6667,
+          "precision": 1,
+          "recall": 0.6667,
+          "f1": 0.8,
+          "fpr": 0,
+          "fnr": 0.3333
+        },
+        "glued_affix": {
+          "n": 24,
+          "tp": 21,
+          "tn": 0,
+          "fp": 0,
+          "fn": 3,
+          "accuracy": 0.875,
+          "precision": 1,
+          "recall": 0.875,
+          "f1": 0.9333,
+          "fpr": 0,
+          "fnr": 0.125
+        }
+      },
+      "scunthorpe_near_miss_test": {
+        "substring_scunthorpe": {
+          "n": 18,
+          "tp": 0,
+          "tn": 16,
+          "fp": 2,
+          "fn": 0,
+          "accuracy": 0.8889,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0,
+          "fpr": 0.1111,
+          "fnr": 0
+        },
+        "near_miss_clean": {
+          "n": 20,
+          "tp": 0,
+          "tn": 20,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0,
+          "fpr": 0,
+          "fnr": 0
+        }
+      }
+    }
+  },
+  "note": "v2b: rude/demeaning = positive (public-website unsafe); Scunthorpe/real_clean negative. Jev leads F1 + rude recall. Thresholds frozen on train/dev.",
+  "winners": {
+    "test_f1": "jev",
+    "test_exact_match_positive": "token_scorer",
+    "real_clean_lowest_fpr": "lexicon",
+    "rude_highest_recall": "jev",
+    "test_lowest_cost": "lexicon"
+  },
+  "thresholds": {
+    "gate_score_min": 0.4,
+    "gate_noul_min": 0.35,
+    "span_noul_min": 0.45,
+    "verify_noul_min": 0.55,
+    "max_candidates": 24,
+    "tuned_on": {
+      "probe_n": 24,
+      "probe_fp": 0,
+      "probe_fn": 0,
+      "probe_rude_fn": 0,
+      "at": "2026-09-18T23:03:37.512Z"
+    },
+    "note": "v2b adjusted after smoke; span/verify slightly raised"
+  },
+  "n_docs_run": 1508,
+  "concurrency": 4,
+  "smoke": false,
+  "policy": "external_company_communication_filter"
+}

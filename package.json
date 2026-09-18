@@ -1,0 +1,15 @@
+{
+  "name": "jev-profanity",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Jev vs lexicon vs hybrid profanity/rude detect+censor benchmark (Czech-first external-comms filter lab)",
+  "scripts": {
+    "generate": "node data/generate.mjs",
+    "bench": "node run_bench.mjs",
+    "smoke": "node run_bench.mjs --smoke"
+  },
+  "dependencies": {
+    "@typesafe-ai/sdk": "file:../jev-lab-001/node_modules/@typesafe-ai/sdk"
+  }
+}
