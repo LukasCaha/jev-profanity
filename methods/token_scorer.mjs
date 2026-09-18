@@ -1,5 +1,5 @@
 /**
- * Method 3 — token_scorer v2 (obfuscation-aware lexicon hybrid).
+ * Method 3 — token_scorer v3 (obfuscation-aware lexicon hybrid).
  *
  * Improvements vs v1:
  *  - Separator strip (dots/dashes/underscores/soft-hyphen) + leet map + ZWSP
@@ -7,7 +7,7 @@
  *  - Spaced letter-runs (incl. Czech vulgars)
  *  - Glued-stem masking: worldčurák → world***** (mask swear morpheme only)
  *  - Partial self-censor forms (f*ck → letters fck / stem match)
- *  - Must NOT censor rude-not-profane (stará bába etc. — not in lexicon)
+ *  - V3: train short-codes/algospeak via words.mjs; must NOT bake test-only (stará bába etc. — not in lexicon)
  */
 import {
   applySpanMask,

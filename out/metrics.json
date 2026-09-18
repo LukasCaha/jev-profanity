@@ -1,35 +1,35 @@
 {
-  "generated_at": "2026-09-18T23:19:45.777Z",
-  "version": "2b",
+  "generated_at": "2026-09-18T23:41:09.119Z",
+  "version": "3",
   "methods": {
     "lexicon": {
       "test": {
         "detection": {
-          "n": 543,
-          "tp": 256,
-          "tn": 78,
+          "n": 656,
+          "tp": 219,
+          "tn": 97,
           "fp": 0,
-          "fn": 209,
-          "accuracy": 0.6151,
+          "fn": 340,
+          "accuracy": 0.4817,
           "precision": 1,
-          "recall": 0.5505,
-          "f1": 0.7101,
+          "recall": 0.3918,
+          "f1": 0.563,
           "fpr": 0,
-          "fnr": 0.4495
+          "fnr": 0.6082
         },
         "rewrite": {
-          "exact_match": 0.5654,
-          "exact_match_positive": 0.4925,
-          "n_positive": 465,
-          "mask_char_f1": 0.756,
-          "mask_char_precision": 0.953,
-          "mask_char_recall": 0.6265
+          "exact_match": 0.439,
+          "exact_match_positive": 0.3417,
+          "n_positive": 559,
+          "mask_char_f1": 0.5518,
+          "mask_char_precision": 0.943,
+          "mask_char_recall": 0.39
         },
         "latency_ms": {
           "p50": 0,
           "p95": 0,
           "mean": 0,
-          "n": 543
+          "n": 656
         },
         "tokens": {
           "input": 0,
@@ -77,31 +77,31 @@
       },
       "train": {
         "detection": {
-          "n": 560,
-          "tp": 287,
-          "tn": 80,
+          "n": 738,
+          "tp": 372,
+          "tn": 88,
           "fp": 0,
-          "fn": 193,
-          "accuracy": 0.6554,
+          "fn": 278,
+          "accuracy": 0.6233,
           "precision": 1,
-          "recall": 0.5979,
-          "f1": 0.7484,
+          "recall": 0.5723,
+          "f1": 0.728,
           "fpr": 0,
-          "fnr": 0.4021
+          "fnr": 0.4277
         },
         "rewrite": {
-          "exact_match": 0.5964,
-          "exact_match_positive": 0.5292,
-          "n_positive": 480,
-          "mask_char_f1": 0.7751,
-          "mask_char_precision": 0.9284,
-          "mask_char_recall": 0.6652
+          "exact_match": 0.5339,
+          "exact_match_positive": 0.4708,
+          "n_positive": 650,
+          "mask_char_f1": 0.7373,
+          "mask_char_precision": 0.9218,
+          "mask_char_recall": 0.6143
         },
         "latency_ms": {
           "p50": 0,
           "p95": 0,
           "mean": 0,
-          "n": 560
+          "n": 738
         },
         "tokens": {
           "input": 0,
@@ -113,31 +113,31 @@
       },
       "dev": {
         "detection": {
-          "n": 205,
-          "tp": 112,
-          "tn": 30,
+          "n": 240,
+          "tp": 119,
+          "tn": 31,
           "fp": 0,
-          "fn": 63,
-          "accuracy": 0.6927,
+          "fn": 90,
+          "accuracy": 0.625,
           "precision": 1,
-          "recall": 0.64,
-          "f1": 0.7805,
+          "recall": 0.5694,
+          "f1": 0.7256,
           "fpr": 0,
-          "fnr": 0.36
+          "fnr": 0.4306
         },
         "rewrite": {
-          "exact_match": 0.6439,
-          "exact_match_positive": 0.5829,
-          "n_positive": 175,
-          "mask_char_f1": 0.7958,
-          "mask_char_precision": 0.9414,
-          "mask_char_recall": 0.6892
+          "exact_match": 0.5208,
+          "exact_match_positive": 0.4498,
+          "n_positive": 209,
+          "mask_char_f1": 0.7274,
+          "mask_char_precision": 0.8868,
+          "mask_char_recall": 0.6166
         },
         "latency_ms": {
           "p50": 0,
           "p95": 0,
           "mean": 0,
-          "n": 205
+          "n": 240
         },
         "tokens": {
           "input": 0,
@@ -149,31 +149,31 @@
       },
       "all_synth": {
         "detection": {
-          "n": 1308,
-          "tp": 655,
-          "tn": 188,
+          "n": 1634,
+          "tp": 710,
+          "tn": 216,
           "fp": 0,
-          "fn": 465,
-          "accuracy": 0.6445,
+          "fn": 708,
+          "accuracy": 0.5667,
           "precision": 1,
-          "recall": 0.5848,
-          "f1": 0.738,
+          "recall": 0.5007,
+          "f1": 0.6673,
           "fpr": 0,
-          "fnr": 0.4152
+          "fnr": 0.4993
         },
         "rewrite": {
-          "exact_match": 0.591,
-          "exact_match_positive": 0.5223,
-          "n_positive": 1120,
-          "mask_char_f1": 0.7696,
-          "mask_char_precision": 0.941,
-          "mask_char_recall": 0.651
+          "exact_match": 0.4939,
+          "exact_match_positive": 0.4168,
+          "n_positive": 1418,
+          "mask_char_f1": 0.6637,
+          "mask_char_precision": 0.9226,
+          "mask_char_recall": 0.5182
         },
         "latency_ms": {
           "p50": 0,
           "p95": 0,
           "mean": 0,
-          "n": 1308
+          "n": 1634
         },
         "tokens": {
           "input": 0,
@@ -184,49 +184,328 @@
         "errors": 0
       },
       "rude_public_unsafe_recall": {
-        "n": 70,
-        "tp": 50,
-        "fn": 20,
-        "recall": 0.7143,
-        "exact_match": 0.5571,
+        "n": 40,
+        "tp": 31,
+        "fn": 9,
+        "recall": 0.775,
+        "exact_match": 0.5,
         "by_family": {
           "rude_not_profane_cs": {
-            "n": 35,
-            "tp": 21,
-            "fn": 14,
-            "recall": 0.6,
-            "exact_match": 0.4571
+            "n": 32,
+            "tp": 23,
+            "fn": 9,
+            "recall": 0.7188,
+            "exact_match": 0.4063
           },
           "rude_not_profane_en": {
-            "n": 35,
-            "tp": 29,
-            "fn": 6,
-            "recall": 0.8286,
-            "exact_match": 0.6571
+            "n": 8,
+            "tp": 8,
+            "fn": 0,
+            "recall": 1,
+            "exact_match": 0.875
           }
         }
       },
       "rude_not_profane_fpr": {
-        "n": 70,
-        "fp": 50,
-        "fpr": 0.7143,
+        "n": 40,
+        "fp": 31,
+        "fpr": 0.775,
         "note": "v2b alias: fpr field = recall"
       },
       "evasion_families_test": {
         "obfuscation_spaced": {
-          "n": 28,
-          "tp": 10,
+          "n": 24,
+          "tp": 6,
           "tn": 0,
           "fp": 0,
           "fn": 18,
-          "accuracy": 0.3571,
+          "accuracy": 0.25,
           "precision": 1,
-          "recall": 0.3571,
-          "f1": 0.5263,
+          "recall": 0.25,
+          "f1": 0.4,
           "fpr": 0,
-          "fnr": 0.6429
+          "fnr": 0.75
         },
         "obfuscation_mixed": {
+          "n": 22,
+          "tp": 0,
+          "tn": 0,
+          "fp": 0,
+          "fn": 22,
+          "accuracy": 0,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0,
+          "fpr": 0,
+          "fnr": 1
+        },
+        "sep_dot_uscore": {
+          "n": 22,
+          "tp": 5,
+          "tn": 0,
+          "fp": 0,
+          "fn": 17,
+          "accuracy": 0.2273,
+          "precision": 1,
+          "recall": 0.2273,
+          "f1": 0.3704,
+          "fpr": 0,
+          "fnr": 0.7727
+        },
+        "partial_self_censor": {
+          "n": 22,
+          "tp": 0,
+          "tn": 0,
+          "fp": 0,
+          "fn": 22,
+          "accuracy": 0,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0,
+          "fpr": 0,
+          "fnr": 1
+        },
+        "repeat_padding": {
+          "n": 18,
+          "tp": 0,
+          "tn": 0,
+          "fp": 0,
+          "fn": 18,
+          "accuracy": 0,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0,
+          "fpr": 0,
+          "fnr": 1
+        },
+        "homoglyph_cyrillic": {
+          "n": 18,
+          "tp": 16,
+          "tn": 0,
+          "fp": 0,
+          "fn": 2,
+          "accuracy": 0.8889,
+          "precision": 1,
+          "recall": 0.8889,
+          "f1": 0.9412,
+          "fpr": 0,
+          "fnr": 0.1111
+        },
+        "zwsp_invisible": {
+          "n": 18,
+          "tp": 18,
+          "tn": 0,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "fpr": 0,
+          "fnr": 0
+        },
+        "typos_adjacency": {
+          "n": 16,
+          "tp": 0,
+          "tn": 0,
+          "fp": 0,
+          "fn": 16,
+          "accuracy": 0,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0,
+          "fpr": 0,
+          "fnr": 1
+        },
+        "foreign_phonetic": {
+          "n": 8,
+          "tp": 0,
+          "tn": 0,
+          "fp": 0,
+          "fn": 8,
+          "accuracy": 0,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0,
+          "fpr": 0,
+          "fnr": 1
+        },
+        "word_inversion_light": {
+          "n": 10,
+          "tp": 0,
+          "tn": 0,
+          "fp": 0,
+          "fn": 10,
+          "accuracy": 0,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0,
+          "fpr": 0,
+          "fnr": 1
+        },
+        "glued_affix": {
+          "n": 22,
+          "tp": 0,
+          "tn": 0,
+          "fp": 0,
+          "fn": 22,
+          "accuracy": 0,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0,
+          "fpr": 0,
+          "fnr": 1
+        }
+      },
+      "scunthorpe_near_miss_test": {
+        "substring_scunthorpe": {
+          "n": 16,
+          "tp": 0,
+          "tn": 16,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0,
+          "fpr": 0,
+          "fnr": 0
+        },
+        "near_miss_clean": {
+          "n": 20,
+          "tp": 0,
+          "tn": 20,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0,
+          "fpr": 0,
+          "fnr": 0
+        }
+      },
+      "v3_families_test": {
+        "algospeak_hostile": {
+          "n": 52,
+          "tp": 8,
+          "tn": 0,
+          "fp": 0,
+          "fn": 44,
+          "accuracy": 0.1538,
+          "precision": 1,
+          "recall": 0.1538,
+          "f1": 0.2667,
+          "fpr": 0,
+          "fnr": 0.8462
+        },
+        "short_code_insult": {
+          "n": 42,
+          "tp": 22,
+          "tn": 0,
+          "fp": 0,
+          "fn": 20,
+          "accuracy": 0.5238,
+          "precision": 1,
+          "recall": 0.5238,
+          "f1": 0.6875,
+          "fpr": 0,
+          "fnr": 0.4762
+        },
+        "subculture_slur": {
+          "n": 36,
+          "tp": 0,
+          "tn": 0,
+          "fp": 0,
+          "fn": 36,
+          "accuracy": 0,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0,
+          "fpr": 0,
+          "fnr": 1
+        },
+        "semantic_weapon": {
+          "n": 40,
+          "tp": 0,
+          "tn": 0,
+          "fp": 0,
+          "fn": 40,
+          "accuracy": 0,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0,
+          "fpr": 0,
+          "fnr": 1
+        },
+        "coded_hate": {
+          "n": 36,
+          "tp": 0,
+          "tn": 0,
+          "fp": 0,
+          "fn": 36,
+          "accuracy": 0,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0,
+          "fpr": 0,
+          "fnr": 1
+        },
+        "coded_hate_trap": {
+          "n": 28,
+          "tp": 0,
+          "tn": 28,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0,
+          "fpr": 0,
+          "fnr": 0
+        }
+      },
+      "v3_families_train": {
+        "algospeak_train": {
+          "n": 48,
+          "tp": 26,
+          "tn": 0,
+          "fp": 0,
+          "fn": 22,
+          "accuracy": 0.5417,
+          "precision": 1,
+          "recall": 0.5417,
+          "f1": 0.7027,
+          "fpr": 0,
+          "fnr": 0.4583
+        },
+        "short_code_train": {
+          "n": 48,
+          "tp": 33,
+          "tn": 0,
+          "fp": 0,
+          "fn": 15,
+          "accuracy": 0.6875,
+          "precision": 1,
+          "recall": 0.6875,
+          "f1": 0.8148,
+          "fpr": 0,
+          "fnr": 0.3125
+        },
+        "semantic_weapon_train": {
+          "n": 42,
+          "tp": 35,
+          "tn": 0,
+          "fp": 0,
+          "fn": 7,
+          "accuracy": 0.8333,
+          "precision": 1,
+          "recall": 0.8333,
+          "f1": 0.9091,
+          "fpr": 0,
+          "fnr": 0.1667
+        },
+        "coded_hate_train": {
           "n": 28,
           "tp": 0,
           "tn": 0,
@@ -239,139 +518,20 @@
           "fpr": 0,
           "fnr": 1
         },
-        "sep_dot_uscore": {
-          "n": 26,
-          "tp": 8,
-          "tn": 0,
-          "fp": 0,
-          "fn": 18,
-          "accuracy": 0.3077,
-          "precision": 1,
-          "recall": 0.3077,
-          "f1": 0.4706,
-          "fpr": 0,
-          "fnr": 0.6923
-        },
-        "partial_self_censor": {
-          "n": 26,
-          "tp": 0,
-          "tn": 0,
-          "fp": 0,
-          "fn": 26,
-          "accuracy": 0,
-          "precision": 0,
-          "recall": 0,
-          "f1": 0,
-          "fpr": 0,
-          "fnr": 1
-        },
-        "repeat_padding": {
-          "n": 24,
-          "tp": 0,
-          "tn": 0,
-          "fp": 0,
-          "fn": 24,
-          "accuracy": 0,
-          "precision": 0,
-          "recall": 0,
-          "f1": 0,
-          "fpr": 0,
-          "fnr": 1
-        },
-        "homoglyph_cyrillic": {
-          "n": 22,
-          "tp": 20,
-          "tn": 0,
-          "fp": 0,
-          "fn": 2,
-          "accuracy": 0.9091,
-          "precision": 1,
-          "recall": 0.9091,
-          "f1": 0.9524,
-          "fpr": 0,
-          "fnr": 0.0909
-        },
-        "zwsp_invisible": {
-          "n": 22,
-          "tp": 22,
-          "tn": 0,
-          "fp": 0,
-          "fn": 0,
-          "accuracy": 1,
-          "precision": 1,
-          "recall": 1,
-          "f1": 1,
-          "fpr": 0,
-          "fnr": 0
-        },
-        "typos_adjacency": {
-          "n": 20,
-          "tp": 0,
-          "tn": 0,
-          "fp": 0,
-          "fn": 20,
-          "accuracy": 0,
-          "precision": 0,
-          "recall": 0,
-          "f1": 0,
-          "fpr": 0,
-          "fnr": 1
-        },
-        "foreign_phonetic": {
-          "n": 20,
-          "tp": 1,
-          "tn": 0,
-          "fp": 0,
-          "fn": 19,
-          "accuracy": 0.05,
-          "precision": 1,
-          "recall": 0.05,
-          "f1": 0.0952,
-          "fpr": 0,
-          "fnr": 0.95
-        },
-        "word_inversion_light": {
-          "n": 12,
-          "tp": 0,
+        "subculture_train": {
+          "n": 38,
+          "tp": 26,
           "tn": 0,
           "fp": 0,
           "fn": 12,
-          "accuracy": 0,
-          "precision": 0,
-          "recall": 0,
-          "f1": 0,
-          "fpr": 0,
-          "fnr": 1
-        },
-        "glued_affix": {
-          "n": 24,
-          "tp": 2,
-          "tn": 0,
-          "fp": 0,
-          "fn": 22,
-          "accuracy": 0.0833,
+          "accuracy": 0.6842,
           "precision": 1,
-          "recall": 0.0833,
-          "f1": 0.1538,
+          "recall": 0.6842,
+          "f1": 0.8125,
           "fpr": 0,
-          "fnr": 0.9167
-        }
-      },
-      "scunthorpe_near_miss_test": {
-        "substring_scunthorpe": {
-          "n": 18,
-          "tp": 0,
-          "tn": 18,
-          "fp": 0,
-          "fn": 0,
-          "accuracy": 1,
-          "precision": 0,
-          "recall": 0,
-          "f1": 0,
-          "fpr": 0,
-          "fnr": 0
+          "fnr": 0.3158
         },
-        "near_miss_clean": {
+        "coded_hate_trap_train": {
           "n": 20,
           "tp": 0,
           "tn": 20,
@@ -383,37 +543,50 @@
           "f1": 0,
           "fpr": 0,
           "fnr": 0
+        },
+        "cs_evasion_train": {
+          "n": 55,
+          "tp": 16,
+          "tn": 0,
+          "fp": 0,
+          "fn": 39,
+          "accuracy": 0.2909,
+          "precision": 1,
+          "recall": 0.2909,
+          "f1": 0.4507,
+          "fpr": 0,
+          "fnr": 0.7091
         }
       }
     },
     "token_scorer": {
       "test": {
         "detection": {
-          "n": 543,
-          "tp": 402,
-          "tn": 78,
+          "n": 656,
+          "tp": 368,
+          "tn": 97,
           "fp": 0,
-          "fn": 63,
-          "accuracy": 0.884,
+          "fn": 191,
+          "accuracy": 0.7088,
           "precision": 1,
-          "recall": 0.8645,
-          "f1": 0.9273,
+          "recall": 0.6583,
+          "f1": 0.794,
           "fpr": 0,
-          "fnr": 0.1355
+          "fnr": 0.3417
         },
         "rewrite": {
-          "exact_match": 0.8306,
-          "exact_match_positive": 0.8022,
-          "n_positive": 465,
-          "mask_char_f1": 0.9006,
-          "mask_char_precision": 0.9695,
-          "mask_char_recall": 0.8409
+          "exact_match": 0.5747,
+          "exact_match_positive": 0.5009,
+          "n_positive": 559,
+          "mask_char_f1": 0.6856,
+          "mask_char_precision": 0.9432,
+          "mask_char_recall": 0.5385
         },
         "latency_ms": {
           "p50": 0,
           "p95": 0,
           "mean": 0,
-          "n": 543
+          "n": 656
         },
         "tokens": {
           "input": 0,
@@ -447,7 +620,7 @@
         },
         "latency_ms": {
           "p50": 0,
-          "p95": 0,
+          "p95": 1,
           "mean": 0,
           "n": 200
         },
@@ -461,31 +634,31 @@
       },
       "train": {
         "detection": {
-          "n": 560,
-          "tp": 451,
-          "tn": 80,
+          "n": 738,
+          "tp": 547,
+          "tn": 88,
           "fp": 0,
-          "fn": 29,
-          "accuracy": 0.9482,
+          "fn": 103,
+          "accuracy": 0.8604,
           "precision": 1,
-          "recall": 0.9396,
-          "f1": 0.9689,
+          "recall": 0.8415,
+          "f1": 0.914,
           "fpr": 0,
-          "fnr": 0.0604
+          "fnr": 0.1585
         },
         "rewrite": {
-          "exact_match": 0.8518,
-          "exact_match_positive": 0.8271,
-          "n_positive": 480,
-          "mask_char_f1": 0.9284,
-          "mask_char_precision": 0.9402,
-          "mask_char_recall": 0.9169
+          "exact_match": 0.6152,
+          "exact_match_positive": 0.5631,
+          "n_positive": 650,
+          "mask_char_f1": 0.8253,
+          "mask_char_precision": 0.8944,
+          "mask_char_recall": 0.7661
         },
         "latency_ms": {
           "p50": 0,
           "p95": 0,
           "mean": 0,
-          "n": 560
+          "n": 738
         },
         "tokens": {
           "input": 0,
@@ -497,31 +670,31 @@
       },
       "dev": {
         "detection": {
-          "n": 205,
-          "tp": 167,
-          "tn": 30,
+          "n": 240,
+          "tp": 181,
+          "tn": 31,
           "fp": 0,
-          "fn": 8,
-          "accuracy": 0.961,
+          "fn": 28,
+          "accuracy": 0.8833,
           "precision": 1,
-          "recall": 0.9543,
-          "f1": 0.9766,
+          "recall": 0.866,
+          "f1": 0.9282,
           "fpr": 0,
-          "fnr": 0.0457
+          "fnr": 0.134
         },
         "rewrite": {
-          "exact_match": 0.8634,
-          "exact_match_positive": 0.84,
-          "n_positive": 175,
-          "mask_char_f1": 0.9338,
-          "mask_char_precision": 0.9462,
-          "mask_char_recall": 0.9218
+          "exact_match": 0.6167,
+          "exact_match_positive": 0.5598,
+          "n_positive": 209,
+          "mask_char_f1": 0.8201,
+          "mask_char_precision": 0.8632,
+          "mask_char_recall": 0.7811
         },
         "latency_ms": {
           "p50": 0,
           "p95": 0,
           "mean": 0,
-          "n": 205
+          "n": 240
         },
         "tokens": {
           "input": 0,
@@ -533,31 +706,31 @@
       },
       "all_synth": {
         "detection": {
-          "n": 1308,
-          "tp": 1020,
-          "tn": 188,
+          "n": 1634,
+          "tp": 1096,
+          "tn": 216,
           "fp": 0,
-          "fn": 100,
-          "accuracy": 0.9235,
+          "fn": 322,
+          "accuracy": 0.8029,
           "precision": 1,
-          "recall": 0.9107,
-          "f1": 0.9533,
+          "recall": 0.7729,
+          "f1": 0.8719,
           "fpr": 0,
-          "fnr": 0.0893
+          "fnr": 0.2271
         },
         "rewrite": {
-          "exact_match": 0.8448,
-          "exact_match_positive": 0.8187,
-          "n_positive": 1120,
-          "mask_char_f1": 0.917,
-          "mask_char_precision": 0.9536,
-          "mask_char_recall": 0.883
+          "exact_match": 0.5991,
+          "exact_match_positive": 0.5381,
+          "n_positive": 1418,
+          "mask_char_f1": 0.7703,
+          "mask_char_precision": 0.9054,
+          "mask_char_recall": 0.6703
         },
         "latency_ms": {
           "p50": 0,
           "p95": 0,
           "mean": 0,
-          "n": 1308
+          "n": 1634
         },
         "tokens": {
           "input": 0,
@@ -568,64 +741,64 @@
         "errors": 0
       },
       "rude_public_unsafe_recall": {
-        "n": 70,
-        "tp": 50,
-        "fn": 20,
-        "recall": 0.7143,
-        "exact_match": 0.5571,
+        "n": 40,
+        "tp": 31,
+        "fn": 9,
+        "recall": 0.775,
+        "exact_match": 0.5,
         "by_family": {
           "rude_not_profane_cs": {
-            "n": 35,
-            "tp": 21,
-            "fn": 14,
-            "recall": 0.6,
-            "exact_match": 0.4571
+            "n": 32,
+            "tp": 23,
+            "fn": 9,
+            "recall": 0.7188,
+            "exact_match": 0.4063
           },
           "rude_not_profane_en": {
-            "n": 35,
-            "tp": 29,
-            "fn": 6,
-            "recall": 0.8286,
-            "exact_match": 0.6571
+            "n": 8,
+            "tp": 8,
+            "fn": 0,
+            "recall": 1,
+            "exact_match": 0.875
           }
         }
       },
       "rude_not_profane_fpr": {
-        "n": 70,
-        "fp": 50,
-        "fpr": 0.7143,
+        "n": 40,
+        "fp": 31,
+        "fpr": 0.775,
         "note": "v2b alias: fpr field = recall"
       },
       "evasion_families_test": {
         "obfuscation_spaced": {
-          "n": 28,
-          "tp": 22,
+          "n": 24,
+          "tp": 20,
           "tn": 0,
           "fp": 0,
-          "fn": 6,
-          "accuracy": 0.7857,
+          "fn": 4,
+          "accuracy": 0.8333,
           "precision": 1,
-          "recall": 0.7857,
-          "f1": 0.88,
+          "recall": 0.8333,
+          "f1": 0.9091,
           "fpr": 0,
-          "fnr": 0.2143
+          "fnr": 0.1667
         },
         "obfuscation_mixed": {
-          "n": 28,
-          "tp": 25,
+          "n": 22,
+          "tp": 18,
           "tn": 0,
           "fp": 0,
-          "fn": 3,
-          "accuracy": 0.8929,
+          "fn": 4,
+          "accuracy": 0.8182,
           "precision": 1,
-          "recall": 0.8929,
-          "f1": 0.9434,
+          "recall": 0.8182,
+          "f1": 0.9,
           "fpr": 0,
-          "fnr": 0.1071
+          "fnr": 0.1818
         },
         "sep_dot_uscore": {
-          "n": 26,
-          "tp": 26,
+          "n": 22,
+          "tp": 22,
           "tn": 0,
           "fp": 0,
           "fn": 0,
@@ -637,34 +810,34 @@
           "fnr": 0
         },
         "partial_self_censor": {
-          "n": 26,
-          "tp": 24,
+          "n": 22,
+          "tp": 19,
           "tn": 0,
           "fp": 0,
-          "fn": 2,
-          "accuracy": 0.9231,
+          "fn": 3,
+          "accuracy": 0.8636,
           "precision": 1,
-          "recall": 0.9231,
-          "f1": 0.96,
+          "recall": 0.8636,
+          "f1": 0.9268,
           "fpr": 0,
-          "fnr": 0.0769
+          "fnr": 0.1364
         },
         "repeat_padding": {
-          "n": 24,
-          "tp": 24,
+          "n": 18,
+          "tp": 17,
           "tn": 0,
           "fp": 0,
-          "fn": 0,
-          "accuracy": 1,
+          "fn": 1,
+          "accuracy": 0.9444,
           "precision": 1,
-          "recall": 1,
-          "f1": 1,
+          "recall": 0.9444,
+          "f1": 0.9714,
           "fpr": 0,
-          "fnr": 0
+          "fnr": 0.0556
         },
         "homoglyph_cyrillic": {
-          "n": 22,
-          "tp": 22,
+          "n": 18,
+          "tp": 18,
           "tn": 0,
           "fp": 0,
           "fn": 0,
@@ -676,8 +849,8 @@
           "fnr": 0
         },
         "zwsp_invisible": {
-          "n": 22,
-          "tp": 22,
+          "n": 18,
+          "tp": 18,
           "tn": 0,
           "fp": 0,
           "fn": 0,
@@ -689,37 +862,37 @@
           "fnr": 0
         },
         "typos_adjacency": {
-          "n": 20,
-          "tp": 20,
+          "n": 16,
+          "tp": 15,
           "tn": 0,
           "fp": 0,
-          "fn": 0,
-          "accuracy": 1,
+          "fn": 1,
+          "accuracy": 0.9375,
           "precision": 1,
-          "recall": 1,
-          "f1": 1,
+          "recall": 0.9375,
+          "f1": 0.9677,
           "fpr": 0,
-          "fnr": 0
+          "fnr": 0.0625
         },
         "foreign_phonetic": {
-          "n": 20,
+          "n": 8,
           "tp": 1,
           "tn": 0,
           "fp": 0,
-          "fn": 19,
-          "accuracy": 0.05,
+          "fn": 7,
+          "accuracy": 0.125,
           "precision": 1,
-          "recall": 0.05,
-          "f1": 0.0952,
+          "recall": 0.125,
+          "f1": 0.2222,
           "fpr": 0,
-          "fnr": 0.95
+          "fnr": 0.875
         },
         "word_inversion_light": {
-          "n": 12,
+          "n": 10,
           "tp": 0,
           "tn": 0,
           "fp": 0,
-          "fn": 12,
+          "fn": 10,
           "accuracy": 0,
           "precision": 0,
           "recall": 0,
@@ -728,325 +901,6 @@
           "fnr": 1
         },
         "glued_affix": {
-          "n": 24,
-          "tp": 23,
-          "tn": 0,
-          "fp": 0,
-          "fn": 1,
-          "accuracy": 0.9583,
-          "precision": 1,
-          "recall": 0.9583,
-          "f1": 0.9787,
-          "fpr": 0,
-          "fnr": 0.0417
-        }
-      },
-      "scunthorpe_near_miss_test": {
-        "substring_scunthorpe": {
-          "n": 18,
-          "tp": 0,
-          "tn": 18,
-          "fp": 0,
-          "fn": 0,
-          "accuracy": 1,
-          "precision": 0,
-          "recall": 0,
-          "f1": 0,
-          "fpr": 0,
-          "fnr": 0
-        },
-        "near_miss_clean": {
-          "n": 20,
-          "tp": 0,
-          "tn": 20,
-          "fp": 0,
-          "fn": 0,
-          "accuracy": 1,
-          "precision": 0,
-          "recall": 0,
-          "f1": 0,
-          "fpr": 0,
-          "fnr": 0
-        }
-      }
-    },
-    "jev": {
-      "test": {
-        "detection": {
-          "n": 543,
-          "tp": 452,
-          "tn": 76,
-          "fp": 2,
-          "fn": 13,
-          "accuracy": 0.9724,
-          "precision": 0.9956,
-          "recall": 0.972,
-          "f1": 0.9837,
-          "fpr": 0.0256,
-          "fnr": 0.028
-        },
-        "rewrite": {
-          "exact_match": 0.6575,
-          "exact_match_positive": 0.6,
-          "n_positive": 465,
-          "mask_char_f1": 0.8434,
-          "mask_char_precision": 0.856,
-          "mask_char_recall": 0.8311
-        },
-        "latency_ms": {
-          "p50": 593,
-          "p95": 883,
-          "mean": 574,
-          "n": 543
-        },
-        "tokens": {
-          "input": 1310844,
-          "output": 65494
-        },
-        "estimated_cost_usd": 0.0551,
-        "verify_failed_n": 39,
-        "errors": 0
-      },
-      "real_clean": {
-        "detection": {
-          "n": 200,
-          "tp": 0,
-          "tn": 196,
-          "fp": 4,
-          "fn": 0,
-          "accuracy": 0.98,
-          "precision": 0,
-          "recall": 0,
-          "f1": 0,
-          "fpr": 0.02,
-          "fnr": 0
-        },
-        "rewrite": {
-          "exact_match": 1,
-          "exact_match_positive": null,
-          "n_positive": 0,
-          "mask_char_f1": 0,
-          "mask_char_precision": 0,
-          "mask_char_recall": 0
-        },
-        "latency_ms": {
-          "p50": 183,
-          "p95": 320,
-          "mean": 207,
-          "n": 200
-        },
-        "tokens": {
-          "input": 174784,
-          "output": 8082
-        },
-        "estimated_cost_usd": 0.0073,
-        "verify_failed_n": 0,
-        "errors": 0
-      },
-      "train": {
-        "detection": {
-          "n": 560,
-          "tp": 477,
-          "tn": 79,
-          "fp": 1,
-          "fn": 3,
-          "accuracy": 0.9929,
-          "precision": 0.9979,
-          "recall": 0.9938,
-          "f1": 0.9958,
-          "fpr": 0.0125,
-          "fnr": 0.0063
-        },
-        "rewrite": {
-          "exact_match": 0.7036,
-          "exact_match_positive": 0.6542,
-          "n_positive": 480,
-          "mask_char_f1": 0.8247,
-          "mask_char_precision": 0.8489,
-          "mask_char_recall": 0.8019
-        },
-        "latency_ms": {
-          "p50": 541,
-          "p95": 804,
-          "mean": 526,
-          "n": 560
-        },
-        "tokens": {
-          "input": 1365950,
-          "output": 68200
-        },
-        "estimated_cost_usd": 0.0574,
-        "verify_failed_n": 43,
-        "errors": 0
-      },
-      "dev": {
-        "detection": {
-          "n": 205,
-          "tp": 171,
-          "tn": 30,
-          "fp": 0,
-          "fn": 4,
-          "accuracy": 0.9805,
-          "precision": 1,
-          "recall": 0.9771,
-          "f1": 0.9884,
-          "fpr": 0,
-          "fnr": 0.0229
-        },
-        "rewrite": {
-          "exact_match": 0.7171,
-          "exact_match_positive": 0.6686,
-          "n_positive": 175,
-          "mask_char_f1": 0.846,
-          "mask_char_precision": 0.8772,
-          "mask_char_recall": 0.817
-        },
-        "latency_ms": {
-          "p50": 614,
-          "p95": 1051,
-          "mean": 610,
-          "n": 205
-        },
-        "tokens": {
-          "input": 507099,
-          "output": 25522
-        },
-        "estimated_cost_usd": 0.0213,
-        "verify_failed_n": 13,
-        "errors": 0
-      },
-      "all_synth": {
-        "detection": {
-          "n": 1308,
-          "tp": 1100,
-          "tn": 185,
-          "fp": 3,
-          "fn": 20,
-          "accuracy": 0.9824,
-          "precision": 0.9973,
-          "recall": 0.9821,
-          "f1": 0.9897,
-          "fpr": 0.016,
-          "fnr": 0.0179
-        },
-        "rewrite": {
-          "exact_match": 0.6865,
-          "exact_match_positive": 0.6339,
-          "n_positive": 1120,
-          "mask_char_f1": 0.8363,
-          "mask_char_precision": 0.8561,
-          "mask_char_recall": 0.8173
-        },
-        "latency_ms": {
-          "p50": 570,
-          "p95": 896,
-          "mean": 559,
-          "n": 1308
-        },
-        "tokens": {
-          "input": 3183893,
-          "output": 159216
-        },
-        "estimated_cost_usd": 0.1337,
-        "verify_failed_n": 95,
-        "errors": 0
-      },
-      "rude_public_unsafe_recall": {
-        "n": 70,
-        "tp": 69,
-        "fn": 1,
-        "recall": 0.9857,
-        "exact_match": 0.5714,
-        "by_family": {
-          "rude_not_profane_cs": {
-            "n": 35,
-            "tp": 34,
-            "fn": 1,
-            "recall": 0.9714,
-            "exact_match": 0.4571
-          },
-          "rude_not_profane_en": {
-            "n": 35,
-            "tp": 35,
-            "fn": 0,
-            "recall": 1,
-            "exact_match": 0.6857
-          }
-        }
-      },
-      "rude_not_profane_fpr": {
-        "n": 70,
-        "fp": 69,
-        "fpr": 0.9857,
-        "note": "v2b alias: fpr field = recall"
-      },
-      "evasion_families_test": {
-        "obfuscation_spaced": {
-          "n": 28,
-          "tp": 28,
-          "tn": 0,
-          "fp": 0,
-          "fn": 0,
-          "accuracy": 1,
-          "precision": 1,
-          "recall": 1,
-          "f1": 1,
-          "fpr": 0,
-          "fnr": 0
-        },
-        "obfuscation_mixed": {
-          "n": 28,
-          "tp": 28,
-          "tn": 0,
-          "fp": 0,
-          "fn": 0,
-          "accuracy": 1,
-          "precision": 1,
-          "recall": 1,
-          "f1": 1,
-          "fpr": 0,
-          "fnr": 0
-        },
-        "sep_dot_uscore": {
-          "n": 26,
-          "tp": 26,
-          "tn": 0,
-          "fp": 0,
-          "fn": 0,
-          "accuracy": 1,
-          "precision": 1,
-          "recall": 1,
-          "f1": 1,
-          "fpr": 0,
-          "fnr": 0
-        },
-        "partial_self_censor": {
-          "n": 26,
-          "tp": 26,
-          "tn": 0,
-          "fp": 0,
-          "fn": 0,
-          "accuracy": 1,
-          "precision": 1,
-          "recall": 1,
-          "f1": 1,
-          "fpr": 0,
-          "fnr": 0
-        },
-        "repeat_padding": {
-          "n": 24,
-          "tp": 24,
-          "tn": 0,
-          "fp": 0,
-          "fn": 0,
-          "accuracy": 1,
-          "precision": 1,
-          "recall": 1,
-          "f1": 1,
-          "fpr": 0,
-          "fnr": 0
-        },
-        "homoglyph_cyrillic": {
           "n": 22,
           "tp": 21,
           "tn": 0,
@@ -1058,85 +912,20 @@
           "f1": 0.9767,
           "fpr": 0,
           "fnr": 0.0455
-        },
-        "zwsp_invisible": {
-          "n": 22,
-          "tp": 22,
-          "tn": 0,
-          "fp": 0,
-          "fn": 0,
-          "accuracy": 1,
-          "precision": 1,
-          "recall": 1,
-          "f1": 1,
-          "fpr": 0,
-          "fnr": 0
-        },
-        "typos_adjacency": {
-          "n": 20,
-          "tp": 18,
-          "tn": 0,
-          "fp": 0,
-          "fn": 2,
-          "accuracy": 0.9,
-          "precision": 1,
-          "recall": 0.9,
-          "f1": 0.9474,
-          "fpr": 0,
-          "fnr": 0.1
-        },
-        "foreign_phonetic": {
-          "n": 20,
-          "tp": 20,
-          "tn": 0,
-          "fp": 0,
-          "fn": 0,
-          "accuracy": 1,
-          "precision": 1,
-          "recall": 1,
-          "f1": 1,
-          "fpr": 0,
-          "fnr": 0
-        },
-        "word_inversion_light": {
-          "n": 12,
-          "tp": 8,
-          "tn": 0,
-          "fp": 0,
-          "fn": 4,
-          "accuracy": 0.6667,
-          "precision": 1,
-          "recall": 0.6667,
-          "f1": 0.8,
-          "fpr": 0,
-          "fnr": 0.3333
-        },
-        "glued_affix": {
-          "n": 24,
-          "tp": 21,
-          "tn": 0,
-          "fp": 0,
-          "fn": 3,
-          "accuracy": 0.875,
-          "precision": 1,
-          "recall": 0.875,
-          "f1": 0.9333,
-          "fpr": 0,
-          "fnr": 0.125
         }
       },
       "scunthorpe_near_miss_test": {
         "substring_scunthorpe": {
-          "n": 18,
+          "n": 16,
           "tp": 0,
           "tn": 16,
-          "fp": 2,
+          "fp": 0,
           "fn": 0,
-          "accuracy": 0.8889,
+          "accuracy": 1,
           "precision": 0,
           "recall": 0,
           "f1": 0,
-          "fpr": 0.1111,
+          "fpr": 0,
           "fnr": 0
         },
         "near_miss_clean": {
@@ -1152,10 +941,740 @@
           "fpr": 0,
           "fnr": 0
         }
+      },
+      "v3_families_test": {
+        "algospeak_hostile": {
+          "n": 52,
+          "tp": 13,
+          "tn": 0,
+          "fp": 0,
+          "fn": 39,
+          "accuracy": 0.25,
+          "precision": 1,
+          "recall": 0.25,
+          "f1": 0.4,
+          "fpr": 0,
+          "fnr": 0.75
+        },
+        "short_code_insult": {
+          "n": 42,
+          "tp": 38,
+          "tn": 0,
+          "fp": 0,
+          "fn": 4,
+          "accuracy": 0.9048,
+          "precision": 1,
+          "recall": 0.9048,
+          "f1": 0.95,
+          "fpr": 0,
+          "fnr": 0.0952
+        },
+        "subculture_slur": {
+          "n": 36,
+          "tp": 4,
+          "tn": 0,
+          "fp": 0,
+          "fn": 32,
+          "accuracy": 0.1111,
+          "precision": 1,
+          "recall": 0.1111,
+          "f1": 0.2,
+          "fpr": 0,
+          "fnr": 0.8889
+        },
+        "semantic_weapon": {
+          "n": 40,
+          "tp": 0,
+          "tn": 0,
+          "fp": 0,
+          "fn": 40,
+          "accuracy": 0,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0,
+          "fpr": 0,
+          "fnr": 1
+        },
+        "coded_hate": {
+          "n": 36,
+          "tp": 0,
+          "tn": 0,
+          "fp": 0,
+          "fn": 36,
+          "accuracy": 0,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0,
+          "fpr": 0,
+          "fnr": 1
+        },
+        "coded_hate_trap": {
+          "n": 28,
+          "tp": 0,
+          "tn": 28,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0,
+          "fpr": 0,
+          "fnr": 0
+        }
+      },
+      "v3_families_train": {
+        "algospeak_train": {
+          "n": 48,
+          "tp": 26,
+          "tn": 0,
+          "fp": 0,
+          "fn": 22,
+          "accuracy": 0.5417,
+          "precision": 1,
+          "recall": 0.5417,
+          "f1": 0.7027,
+          "fpr": 0,
+          "fnr": 0.4583
+        },
+        "short_code_train": {
+          "n": 48,
+          "tp": 40,
+          "tn": 0,
+          "fp": 0,
+          "fn": 8,
+          "accuracy": 0.8333,
+          "precision": 1,
+          "recall": 0.8333,
+          "f1": 0.9091,
+          "fpr": 0,
+          "fnr": 0.1667
+        },
+        "semantic_weapon_train": {
+          "n": 42,
+          "tp": 35,
+          "tn": 0,
+          "fp": 0,
+          "fn": 7,
+          "accuracy": 0.8333,
+          "precision": 1,
+          "recall": 0.8333,
+          "f1": 0.9091,
+          "fpr": 0,
+          "fnr": 0.1667
+        },
+        "coded_hate_train": {
+          "n": 28,
+          "tp": 0,
+          "tn": 0,
+          "fp": 0,
+          "fn": 28,
+          "accuracy": 0,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0,
+          "fpr": 0,
+          "fnr": 1
+        },
+        "subculture_train": {
+          "n": 38,
+          "tp": 26,
+          "tn": 0,
+          "fp": 0,
+          "fn": 12,
+          "accuracy": 0.6842,
+          "precision": 1,
+          "recall": 0.6842,
+          "f1": 0.8125,
+          "fpr": 0,
+          "fnr": 0.3158
+        },
+        "coded_hate_trap_train": {
+          "n": 20,
+          "tp": 0,
+          "tn": 20,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0,
+          "fpr": 0,
+          "fnr": 0
+        },
+        "cs_evasion_train": {
+          "n": 55,
+          "tp": 52,
+          "tn": 0,
+          "fp": 0,
+          "fn": 3,
+          "accuracy": 0.9455,
+          "precision": 1,
+          "recall": 0.9455,
+          "f1": 0.972,
+          "fpr": 0,
+          "fnr": 0.0545
+        }
+      }
+    },
+    "jev": {
+      "test": {
+        "detection": {
+          "n": 656,
+          "tp": 556,
+          "tn": 95,
+          "fp": 2,
+          "fn": 3,
+          "accuracy": 0.9924,
+          "precision": 0.9964,
+          "recall": 0.9946,
+          "f1": 0.9955,
+          "fpr": 0.0206,
+          "fnr": 0.0054
+        },
+        "rewrite": {
+          "exact_match": 0.4649,
+          "exact_match_positive": 0.3721,
+          "n_positive": 559,
+          "mask_char_f1": 0.6666,
+          "mask_char_precision": 0.7927,
+          "mask_char_recall": 0.5751
+        },
+        "latency_ms": {
+          "p50": 563,
+          "p95": 781,
+          "mean": 530,
+          "n": 656
+        },
+        "tokens": {
+          "input": 2021572,
+          "output": 90673
+        },
+        "estimated_cost_usd": 0.0849,
+        "verify_failed_n": 31,
+        "errors": 0
+      },
+      "real_clean": {
+        "detection": {
+          "n": 200,
+          "tp": 0,
+          "tn": 178,
+          "fp": 22,
+          "fn": 0,
+          "accuracy": 0.89,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0,
+          "fpr": 0.11,
+          "fnr": 0
+        },
+        "rewrite": {
+          "exact_match": 1,
+          "exact_match_positive": null,
+          "n_positive": 0,
+          "mask_char_f1": 0,
+          "mask_char_precision": 0,
+          "mask_char_recall": 0
+        },
+        "latency_ms": {
+          "p50": 206,
+          "p95": 592,
+          "mean": 255,
+          "n": 200
+        },
+        "tokens": {
+          "input": 352850,
+          "output": 15048
+        },
+        "estimated_cost_usd": 0.0148,
+        "verify_failed_n": 0,
+        "errors": 0
+      },
+      "train": {
+        "detection": {
+          "n": 738,
+          "tp": 648,
+          "tn": 85,
+          "fp": 3,
+          "fn": 2,
+          "accuracy": 0.9932,
+          "precision": 0.9954,
+          "recall": 0.9969,
+          "f1": 0.9962,
+          "fpr": 0.0341,
+          "fnr": 0.0031
+        },
+        "rewrite": {
+          "exact_match": 0.4322,
+          "exact_match_positive": 0.3554,
+          "n_positive": 650,
+          "mask_char_f1": 0.6174,
+          "mask_char_precision": 0.7181,
+          "mask_char_recall": 0.5415
+        },
+        "latency_ms": {
+          "p50": 579,
+          "p95": 762,
+          "mean": 547,
+          "n": 738
+        },
+        "tokens": {
+          "input": 2360963,
+          "output": 105979
+        },
+        "estimated_cost_usd": 0.0992,
+        "verify_failed_n": 29,
+        "errors": 0
+      },
+      "dev": {
+        "detection": {
+          "n": 240,
+          "tp": 209,
+          "tn": 31,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "fpr": 0,
+          "fnr": 0
+        },
+        "rewrite": {
+          "exact_match": 0.475,
+          "exact_match_positive": 0.3971,
+          "n_positive": 209,
+          "mask_char_f1": 0.6714,
+          "mask_char_precision": 0.754,
+          "mask_char_recall": 0.6052
+        },
+        "latency_ms": {
+          "p50": 585,
+          "p95": 787,
+          "mean": 561,
+          "n": 240
+        },
+        "tokens": {
+          "input": 763801,
+          "output": 34376
+        },
+        "estimated_cost_usd": 0.0321,
+        "verify_failed_n": 6,
+        "errors": 0
+      },
+      "all_synth": {
+        "detection": {
+          "n": 1634,
+          "tp": 1413,
+          "tn": 211,
+          "fp": 5,
+          "fn": 5,
+          "accuracy": 0.9939,
+          "precision": 0.9965,
+          "recall": 0.9965,
+          "f1": 0.9965,
+          "fpr": 0.0231,
+          "fnr": 0.0035
+        },
+        "rewrite": {
+          "exact_match": 0.4517,
+          "exact_match_positive": 0.3681,
+          "n_positive": 1418,
+          "mask_char_f1": 0.6459,
+          "mask_char_precision": 0.7544,
+          "mask_char_recall": 0.5646
+        },
+        "latency_ms": {
+          "p50": 574,
+          "p95": 773,
+          "mean": 542,
+          "n": 1634
+        },
+        "tokens": {
+          "input": 5146336,
+          "output": 231028
+        },
+        "estimated_cost_usd": 0.2161,
+        "verify_failed_n": 66,
+        "errors": 0
+      },
+      "rude_public_unsafe_recall": {
+        "n": 40,
+        "tp": 39,
+        "fn": 1,
+        "recall": 0.975,
+        "exact_match": 0.4,
+        "by_family": {
+          "rude_not_profane_cs": {
+            "n": 32,
+            "tp": 31,
+            "fn": 1,
+            "recall": 0.9688,
+            "exact_match": 0.2813
+          },
+          "rude_not_profane_en": {
+            "n": 8,
+            "tp": 8,
+            "fn": 0,
+            "recall": 1,
+            "exact_match": 0.875
+          }
+        }
+      },
+      "rude_not_profane_fpr": {
+        "n": 40,
+        "fp": 39,
+        "fpr": 0.975,
+        "note": "v2b alias: fpr field = recall"
+      },
+      "evasion_families_test": {
+        "obfuscation_spaced": {
+          "n": 24,
+          "tp": 24,
+          "tn": 0,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "fpr": 0,
+          "fnr": 0
+        },
+        "obfuscation_mixed": {
+          "n": 22,
+          "tp": 22,
+          "tn": 0,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "fpr": 0,
+          "fnr": 0
+        },
+        "sep_dot_uscore": {
+          "n": 22,
+          "tp": 22,
+          "tn": 0,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "fpr": 0,
+          "fnr": 0
+        },
+        "partial_self_censor": {
+          "n": 22,
+          "tp": 22,
+          "tn": 0,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "fpr": 0,
+          "fnr": 0
+        },
+        "repeat_padding": {
+          "n": 18,
+          "tp": 18,
+          "tn": 0,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "fpr": 0,
+          "fnr": 0
+        },
+        "homoglyph_cyrillic": {
+          "n": 18,
+          "tp": 18,
+          "tn": 0,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "fpr": 0,
+          "fnr": 0
+        },
+        "zwsp_invisible": {
+          "n": 18,
+          "tp": 18,
+          "tn": 0,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "fpr": 0,
+          "fnr": 0
+        },
+        "typos_adjacency": {
+          "n": 16,
+          "tp": 15,
+          "tn": 0,
+          "fp": 0,
+          "fn": 1,
+          "accuracy": 0.9375,
+          "precision": 1,
+          "recall": 0.9375,
+          "f1": 0.9677,
+          "fpr": 0,
+          "fnr": 0.0625
+        },
+        "foreign_phonetic": {
+          "n": 8,
+          "tp": 8,
+          "tn": 0,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "fpr": 0,
+          "fnr": 0
+        },
+        "word_inversion_light": {
+          "n": 10,
+          "tp": 10,
+          "tn": 0,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "fpr": 0,
+          "fnr": 0
+        },
+        "glued_affix": {
+          "n": 22,
+          "tp": 22,
+          "tn": 0,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "fpr": 0,
+          "fnr": 0
+        }
+      },
+      "scunthorpe_near_miss_test": {
+        "substring_scunthorpe": {
+          "n": 16,
+          "tp": 0,
+          "tn": 16,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0,
+          "fpr": 0,
+          "fnr": 0
+        },
+        "near_miss_clean": {
+          "n": 20,
+          "tp": 0,
+          "tn": 19,
+          "fp": 1,
+          "fn": 0,
+          "accuracy": 0.95,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0,
+          "fpr": 0.05,
+          "fnr": 0
+        }
+      },
+      "v3_families_test": {
+        "algospeak_hostile": {
+          "n": 52,
+          "tp": 52,
+          "tn": 0,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "fpr": 0,
+          "fnr": 0
+        },
+        "short_code_insult": {
+          "n": 42,
+          "tp": 42,
+          "tn": 0,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "fpr": 0,
+          "fnr": 0
+        },
+        "subculture_slur": {
+          "n": 36,
+          "tp": 36,
+          "tn": 0,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "fpr": 0,
+          "fnr": 0
+        },
+        "semantic_weapon": {
+          "n": 40,
+          "tp": 40,
+          "tn": 0,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "fpr": 0,
+          "fnr": 0
+        },
+        "coded_hate": {
+          "n": 36,
+          "tp": 36,
+          "tn": 0,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "fpr": 0,
+          "fnr": 0
+        },
+        "coded_hate_trap": {
+          "n": 28,
+          "tp": 0,
+          "tn": 27,
+          "fp": 1,
+          "fn": 0,
+          "accuracy": 0.9643,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0,
+          "fpr": 0.0357,
+          "fnr": 0
+        }
+      },
+      "v3_families_train": {
+        "algospeak_train": {
+          "n": 48,
+          "tp": 48,
+          "tn": 0,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "fpr": 0,
+          "fnr": 0
+        },
+        "short_code_train": {
+          "n": 48,
+          "tp": 48,
+          "tn": 0,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "fpr": 0,
+          "fnr": 0
+        },
+        "semantic_weapon_train": {
+          "n": 42,
+          "tp": 42,
+          "tn": 0,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "fpr": 0,
+          "fnr": 0
+        },
+        "coded_hate_train": {
+          "n": 28,
+          "tp": 28,
+          "tn": 0,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "fpr": 0,
+          "fnr": 0
+        },
+        "subculture_train": {
+          "n": 38,
+          "tp": 38,
+          "tn": 0,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "fpr": 0,
+          "fnr": 0
+        },
+        "coded_hate_trap_train": {
+          "n": 20,
+          "tp": 0,
+          "tn": 18,
+          "fp": 2,
+          "fn": 0,
+          "accuracy": 0.9,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0,
+          "fpr": 0.1,
+          "fnr": 0
+        },
+        "cs_evasion_train": {
+          "n": 55,
+          "tp": 55,
+          "tn": 0,
+          "fp": 0,
+          "fn": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "fpr": 0,
+          "fnr": 0
+        }
       }
     }
   },
-  "note": "v2b: rude/demeaning = positive (public-website unsafe); Scunthorpe/real_clean negative. Jev leads F1 + rude recall. Thresholds frozen on train/dev.",
+  "note": "v3: Detection + rewrite; V2b rude=positive kept; +algospeak/short-codes/subculture/semantic-weapon/coded-hate (+clean numeric traps). Czech-first. Thresholds frozen on train/dev before test.",
   "winners": {
     "test_f1": "jev",
     "test_exact_match_positive": "token_scorer",
@@ -1174,12 +1693,10 @@
       "probe_fp": 0,
       "probe_fn": 0,
       "probe_rude_fn": 0,
-      "at": "2026-09-18T23:03:37.512Z"
-    },
-    "note": "v2b adjusted after smoke; span/verify slightly raised"
+      "at": "2026-09-18T23:37:14.347Z"
+    }
   },
-  "n_docs_run": 1508,
+  "n_docs_run": 1834,
   "concurrency": 4,
-  "smoke": false,
-  "policy": "external_company_communication_filter"
+  "smoke": false
 }

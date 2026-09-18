@@ -1,0 +1,282 @@
+{
+  "all_agree_positive": [
+    {
+      "id": "test_punct_glued_0000",
+      "family": "punct_glued",
+      "text": "Note:shit, the fronta failed.",
+      "gold_has_profanity": true,
+      "gold_censored": "Note:****, the fronta failed.",
+      "lexicon": {
+        "has_profanity": true,
+        "censored": "Note:****, the fronta failed."
+      },
+      "token_scorer": {
+        "has_profanity": true,
+        "censored": "Note:****, the fronta failed."
+      },
+      "jev": {
+        "has_profanity": true,
+        "censored": "Note:****, the fronta failed."
+      }
+    },
+    {
+      "id": "test_punct_glued_0001",
+      "family": "punct_glued",
+      "text": "hello řidič, (fucking) later.",
+      "gold_has_profanity": true,
+      "gold_censored": "hello řidič, (*******) later.",
+      "lexicon": {
+        "has_profanity": true,
+        "censored": "hello řidič, (*******) later."
+      },
+      "token_scorer": {
+        "has_profanity": true,
+        "censored": "hello řidič, (*******) later."
+      },
+      "jev": {
+        "has_profanity": true,
+        "censored": "hello řidič, (****ing) later."
+      }
+    }
+  ],
+  "only_jev": [
+    {
+      "id": "test_algospeak_hostile_0000",
+      "family": "algospeak_hostile",
+      "text": "Lucie: that účet felt like a grape story (SA-code), delete.",
+      "gold_has_profanity": true,
+      "gold_censored": "Lucie: that účet felt like a ***** story (SA-code), delete.",
+      "lexicon": {
+        "has_profanity": false,
+        "censored": "Lucie: that účet felt like a grape story (SA-code), delete."
+      },
+      "token_scorer": {
+        "has_profanity": false,
+        "censored": "Lucie: that účet felt like a grape story (SA-code), delete."
+      },
+      "jev": {
+        "has_profanity": true,
+        "censored": "Lucie: that účet felt like a grape story (SA-code), delete."
+      }
+    },
+    {
+      "id": "test_algospeak_hostile_0001",
+      "family": "algospeak_hostile",
+      "text": "Aplikace plná kukuřice místo uklízečka — hostile corn joke.",
+      "gold_has_profanity": true,
+      "gold_censored": "Aplikace plná ******** místo uklízečka — hostile corn joke.",
+      "lexicon": {
+        "has_profanity": false,
+        "censored": "Aplikace plná kukuřice místo uklízečka — hostile corn joke."
+      },
+      "token_scorer": {
+        "has_profanity": false,
+        "censored": "Aplikace plná kukuřice místo uklízečka — hostile corn joke."
+      },
+      "jev": {
+        "has_profanity": true,
+        "censored": "Aplikace plná kukuřice místo uklízečka — hostile corn joke."
+      }
+    },
+    {
+      "id": "test_algospeak_hostile_0002",
+      "family": "algospeak_hostile",
+      "text": "CS review: neživá atmosféra u objednávka, chci pryč.",
+      "gold_has_profanity": true,
+      "gold_censored": "CS review: ****** atmosféra u objednávka, chci pryč.",
+      "lexicon": {
+        "has_profanity": false,
+        "censored": "CS review: neživá atmosféra u objednávka, chci pryč."
+      },
+      "token_scorer": {
+        "has_profanity": false,
+        "censored": "CS review: neživá atmosféra u objednávka, chci pryč."
+      },
+      "jev": {
+        "has_profanity": true,
+        "censored": "CS review: neživá atmosféra u objednávka, chci pryč."
+      }
+    },
+    {
+      "id": "test_algospeak_hostile_0003",
+      "family": "algospeak_hostile",
+      "text": "CS review: neživá atmosféra u fronta, chci pryč.",
+      "gold_has_profanity": true,
+      "gold_censored": "CS review: ****** atmosféra u fronta, chci pryč.",
+      "lexicon": {
+        "has_profanity": false,
+        "censored": "CS review: neživá atmosféra u fronta, chci pryč."
+      },
+      "token_scorer": {
+        "has_profanity": false,
+        "censored": "CS review: neživá atmosféra u fronta, chci pryč."
+      },
+      "jev": {
+        "has_profanity": true,
+        "censored": "CS review: neživá atmosféra u fronta, chci pryč."
+      }
+    }
+  ],
+  "only_list_or_token": [
+    {
+      "id": "test_typos_adjacency_0002",
+      "family": "typos_adjacency",
+      "text": "To je birch.",
+      "gold_has_profanity": true,
+      "gold_censored": "To je *****.",
+      "lexicon": {
+        "has_profanity": false,
+        "censored": "To je birch."
+      },
+      "token_scorer": {
+        "has_profanity": true,
+        "censored": "To je *****."
+      },
+      "jev": {
+        "has_profanity": false,
+        "censored": "To je birch."
+      }
+    },
+    {
+      "id": "test_quotes_parens_0010",
+      "family": "quotes_parens",
+      "text": "Quote: (hajzl) — regarding aplikace.",
+      "gold_has_profanity": true,
+      "gold_censored": "Quote: (*****) — regarding aplikace.",
+      "lexicon": {
+        "has_profanity": true,
+        "censored": "Quote: (*****) — regarding aplikace."
+      },
+      "token_scorer": {
+        "has_profanity": true,
+        "censored": "Quote: (*****) — regarding aplikace."
+      },
+      "jev": {
+        "has_profanity": false,
+        "censored": "Quote: (hajzl) — regarding aplikace."
+      }
+    },
+    {
+      "id": "test_typos_adjacency_0002",
+      "family": "typos_adjacency",
+      "text": "To je birch.",
+      "gold_has_profanity": true,
+      "gold_censored": "To je *****.",
+      "lexicon": {
+        "has_profanity": false,
+        "censored": "To je birch."
+      },
+      "token_scorer": {
+        "has_profanity": true,
+        "censored": "To je *****."
+      },
+      "jev": {
+        "has_profanity": false,
+        "censored": "To je birch."
+      }
+    }
+  ],
+  "all_miss": [
+    {
+      "id": "test_rude_not_profane_cs_0005",
+      "family": "rude_not_profane_cs",
+      "text": "Pitomá aplikace podpora, pořád padá.",
+      "gold_has_profanity": true,
+      "gold_censored": "****** aplikace podpora, pořád padá.",
+      "lexicon": {
+        "has_profanity": false,
+        "censored": "Pitomá aplikace podpora, pořád padá."
+      },
+      "token_scorer": {
+        "has_profanity": false,
+        "censored": "Pitomá aplikace podpora, pořád padá."
+      },
+      "jev": {
+        "has_profanity": false,
+        "censored": "Pitomá aplikace podpora, pořád padá."
+      }
+    }
+  ],
+  "clean_traps_ok": [
+    {
+      "id": "test_coded_hate_trap_0000",
+      "family": "coded_hate_trap",
+      "text": "Kapitola 14 příručky popisuje uklízečka postup.",
+      "gold_has_profanity": false,
+      "gold_censored": "Kapitola 14 příručky popisuje uklízečka postup.",
+      "lexicon": {
+        "has_profanity": false,
+        "censored": "Kapitola 14 příručky popisuje uklízečka postup."
+      },
+      "token_scorer": {
+        "has_profanity": false,
+        "censored": "Kapitola 14 příručky popisuje uklízečka postup."
+      },
+      "jev": {
+        "has_profanity": false,
+        "censored": "Kapitola 14 příručky popisuje uklízečka postup."
+      }
+    },
+    {
+      "id": "test_coded_hate_trap_0001",
+      "family": "coded_hate_trap",
+      "text": "Aktuální sleva 14% na refundace do neděle.",
+      "gold_has_profanity": false,
+      "gold_censored": "Aktuální sleva 14% na refundace do neděle.",
+      "lexicon": {
+        "has_profanity": false,
+        "censored": "Aktuální sleva 14% na refundace do neděle."
+      },
+      "token_scorer": {
+        "has_profanity": false,
+        "censored": "Aktuální sleva 14% na refundace do neděle."
+      },
+      "jev": {
+        "has_profanity": false,
+        "censored": "Aktuální sleva 14% na refundace do neděle."
+      }
+    }
+  ],
+  "clean_trap_jev_fp": [
+    {
+      "id": "test_coded_hate_trap_0021",
+      "family": "coded_hate_trap",
+      "text": "Linka 88 MHD zastavuje u skladu uklízečka.",
+      "gold_has_profanity": false,
+      "gold_censored": "Linka 88 MHD zastavuje u skladu uklízečka.",
+      "lexicon": {
+        "has_profanity": false,
+        "censored": "Linka 88 MHD zastavuje u skladu uklízečka."
+      },
+      "token_scorer": {
+        "has_profanity": false,
+        "censored": "Linka 88 MHD zastavuje u skladu uklízečka."
+      },
+      "jev": {
+        "has_profanity": true,
+        "censored": "Linka 88 MHD zastavuje u skladu uklízečka."
+      }
+    }
+  ],
+  "scunthorpe_ok": [
+    {
+      "id": "test_substring_scunthorpe_0000",
+      "family": "substring_scunthorpe",
+      "text": "Button attributed; classic UI pass for úklid.",
+      "gold_has_profanity": false,
+      "gold_censored": "Button attributed; classic UI pass for úklid.",
+      "lexicon": {
+        "has_profanity": false,
+        "censored": "Button attributed; classic UI pass for úklid."
+      },
+      "token_scorer": {
+        "has_profanity": false,
+        "censored": "Button attributed; classic UI pass for úklid."
+      },
+      "jev": {
+        "has_profanity": false,
+        "censored": "Button attributed; classic UI pass for úklid."
+      }
+    }
+  ]
+}

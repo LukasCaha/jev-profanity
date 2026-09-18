@@ -1,4 +1,4 @@
-# Jev lab — CS+EN profanity detect + censor bench (v2)
+# Jev lab — CS+EN profanity detect + censor bench (v3)
 
 **When:** 2026-09-19 ~00:50 Europe/Prague (CET/CEST, UTC+2)  
 **Where:** `/workspace/jev-lab-profanity-bench`  
@@ -268,13 +268,191 @@ Test ≲ train for Jev F1 (healthy). Test EM@pos slightly below train — **no t
 
 | Path | Role |
 |------|------|
-| `data/generate.mjs` | v2 synth + real_clean sampler (seed 20260919b) |
-| `data/synth.jsonl` | committed dataset (1508) |
-| `methods/jev.mjs` | System One pipeline |
+| `data/generate.mjs` | v3 synth + real_clean sampler (seed 20260919v3) |
+| `data/v3_families.mjs` | V3 train/test family generators |
+| `data/synth.jsonl` | committed dataset (1834) |
+| `methods/jev.mjs` | System One pipeline (V3 policy) |
 | `methods/lexicon.mjs` | exact list |
 | `methods/token_scorer.mjs` | obfuscation hybrid |
-| `lib/text.mjs` / `lib/words.mjs` | normalizers + EN/CS lists |
-| `run_bench.mjs` | bench runner (+ family metrics) |
+| `lib/text.mjs` / `lib/words.mjs` | normalizers + EN/CS + V3 train maps |
+| `run_bench.mjs` | bench runner (+ V3 family metrics) |
 | `out/predictions.jsonl` | per-doc predictions |
-| `out/metrics.json` | aggregated metrics + evasion breakdown |
+| `out/metrics.json` | aggregated metrics + V3 breakdown |
 | `out/thresholds.json` | frozen Jev thresholds |
+| `out/contrast_examples_v3.json` | contrast set |
+| `artifacts/v3.0.0/` | versioned tag bundle (synth+metrics+LAB_NOTE+…) |
+
+
+## V3 — algospeak / short-codes / semantic / hate-code (Czech-first)
+
+**When:** 2026-09-19 ~01:45 Europe/Prague (UTC+2)  
+**Seed:** `20260919v3` → int `202609193`  
+**Tag target:** `v3.0.0` (artifacts: `artifacts/v3.0.0/`)  
+**Policy:** V2b kept — block vulgar **OR** rude/demeaning **OR** V3 coded attacks (hostile algospeak, short suicidal-insult codes, subculture flame, semantic weaponization, numeric hate dogwhistles in hateful sentences). Clean traps (`sleva 14%`, `linka 88`) stay negative. Censor rule unchanged (`*` × letters; multiword → star each word).
+
+### Data
+
+| split | n |
+|-------|--:|
+| train | 738 |
+| dev | 240 |
+| test | 656 |
+| real_clean | 200 |
+| **total** | **1834** |
+
+- Positives **1418** / negatives **416**
+- Czech-first: ~**88%** CS-dominant (family + diacritic/heuristic); EN marginal
+- `real_clean`: Youklid reviews (FPR only)
+- Test families **disjoint** from train/dev (incl. all V3 held-out generators)
+
+**V3 held-out test families**
+
+| family | n | notes |
+|--------|--:|-------|
+| algospeak_hostile | 52 | neživý, sebe-odinstalování, kukuřice (corn-porn joke), unalive, seggs, grape… |
+| short_code_insult | 42 | ky$/kmn/kys/kms, tvl/twl, dollar-leet CS |
+| subculture_slur | 36 | synthetic football/ultras + gaming flame |
+| semantic_weapon | 40 | polite surface + demeaning intent |
+| coded_hate | 36 | 14 / 88 / 14/88 in hateful review sentences |
+| coded_hate_trap | 28 | **negative** — sleva 14%, linka 88, byt 88, článek 14… |
+
+Train analogs: `algospeak_train`, `short_code_train`, `semantic_weapon_train`, `coded_hate_train`, `subculture_train`, `coded_hate_trap_train`, `cs_evasion_train` (surfaces OK for list maps; test surfaces held out).
+
+### Methods (train/dev only improvements)
+
+- **Jev:** System One gate/span/verify instructions extended for algospeak, short codes, semantic weaponization, contextual 14/88; candidate starters include generic V3 cues. Thresholds retuned on train/dev probe then frozen.
+- **lexicon / token_scorer:** `TRAIN_SHORT_CODES` (kys/kms/tvl/twl), `TRAIN_ALGOSPEAK` (unalive/seggs + multiword sewer slide / le dollar bean), `TRAIN_SUBCULTURE`, `TRAIN_SEMANTIC_MULTIWORD` — **no** test-only strings (neživý, ky$, kmn, kukuřice, 14/88 bare…). `splitAffix` keeps `$@*` in core so `ky$` → `kys` via leet map.
+- Numeric hate codes intentionally **not** list-baked (context-only → Jev).
+
+Frozen thresholds (`out/thresholds.json`):
+
+| knob | value |
+|------|------:|
+| gate_score_min | 0.4 |
+| gate_noul_min | 0.35 |
+| span_noul_min | 0.45 |
+| verify_noul_min | 0.55 |
+| max_candidates | 24 |
+
+### Results — held-out `test` (n=656)
+
+| Method | Acc | F1 | FPR | FNR | EM | EM@pos | mask-F1 | rude recall | p50 ms | ~$ (test) |
+|--------|----:|---:|----:|----:|---:|-------:|--------:|------------:|-------:|----------:|
+| **jev** | **0.9924** | **0.9955** | 0.0206 | **0.0054** | 0.4649 | 0.3721 | 0.6666 | **0.975** | 563 | 0.0849 |
+| token_scorer | 0.7088 | 0.794 | **0** | 0.3417 | **0.5747** | **0.5009** | **0.6856** | 0.775 | ~0 | 0 |
+| lexicon | 0.4817 | 0.563 | **0** | 0.6082 | 0.439 | 0.3417 | 0.5518 | 0.775 | ~0 | 0 |
+
+### Results — `real_clean` (n=200)
+
+| Method | FPR | Acc | EM | ~$ |
+|--------|----:|----:|---:|---:|
+| lexicon | **0** | 1 | 1 | 0 |
+| token_scorer | **0** | 1 | 1 | 0 |
+| jev | 0.11 | 0.89 | 1 | 0.0148 |
+
+### V3 family recall (test)
+
+| Family | n | lexicon R | token_scorer R | jev R |
+|--------|--:|----------:|---------------:|------:|
+| algospeak_hostile | 52 | 0.1538 | 0.25 | **1** |
+| short_code_insult | 42 | 0.5238 | 0.9048 | **1** |
+| subculture_slur | 36 | 0 | 0.1111 | **1** |
+| semantic_weapon | 40 | 0 | 0 | **1** |
+| coded_hate | 36 | 0 | 0 | **1** |
+| coded_hate_trap (FPR) | 28 | FPR 0 | FPR 0 | FPR 0.0357 |
+
+### Mobile-friendly summary
+
+```
+V3 test n=656 | CS-first ~88% | seed 20260919v3
+jev            F1 0.996  FNR 0.005  EM@pos 0.37  realFPR 0.11  ~$0.085 test
+token_scorer   F1 0.794  FNR 0.342  EM@pos 0.50  realFPR 0.00  $0
+lexicon        F1 0.563  FNR 0.608  EM@pos 0.34  realFPR 0.00  $0
+V3: only Jev solves semantic/algospeak-CS/hate-codes; lists win EM on known tokens
+Full Jev (all splits) ~$0.231
+```
+
+### Contrast examples (gold + 3 methods)
+
+1. **All agree (easy canon)** — `test_canon_fuck_shit`  
+   text: `hello world, fuck, shit, hello`  
+   gold/lex/token/jev: all `has=true`, censored `hello world, ****, ****, hello`
+
+2. **All agree (punct glued)** — `test_punct_glued_0001`  
+   text: `hello řidič, (fucking) later.`  
+   gold: `hello řidič, (*******) later.` — lex/token match; jev detects (mask boundary soft)
+
+3. **Only Jev — algospeak CS** — `test_algospeak_hostile_0001`  
+   text: `Aplikace plná kukuřice místo uklízečka — hostile corn joke.`  
+   gold `has=true` / lex+token `false` / jev `true` (detection; span EM soft)
+
+4. **Only Jev — short code kmn** — `test_short_code_insult_0000`  
+   text: `Chat: kmn this úklid wait.`  
+   gold/jev: `Chat: *** this úklid wait.` — lex+token miss (kmn held-out)
+
+5. **Only Jev — semantic weapon** — `test_semantic_weapon_0000`  
+   text: `Pan Martin — talent na úroveň školky u recepce.`  
+   gold `has=true` / lex+token `false` / jev `true`
+
+6. **Only Jev — coded hate** — `test_coded_hate_0000`  
+   text: `Ticket subject: 14 words forever — hate on objednávka.`  
+   gold `has=true` / lex+token `false` / jev `true`
+
+7. **Only Jev — subculture** — `test_subculture_slur_0000`  
+   text: `Ty skalní hulváte z fanouškovské sekce — servis.`  
+   gold/jev mask `Ty ****** ******* …` — lex+token miss
+
+8. **Only token_scorer** — `test_typos_adjacency_0002`  
+   text: `To je birch.` (bitch typo)  
+   gold/token: `To je *****.` — lex+jev miss
+
+9. **List+token, jev miss** — `test_quotes_parens_0010`  
+   text: `Quote: (hajzl) — regarding aplikace.`  
+   lex+token catch; jev miss on this span
+
+10. **All miss (honest leftover)** — `test_rude_not_profane_cs_0005`  
+    text: `Pitomá aplikace podpora, pořád padá.`  
+    gold `****** aplikace…` — all three `has=false` (mild demeaning adj miss)
+
+11. **Clean trap OK** — `test_coded_hate_trap_0001`  
+    text: `Aktuální sleva 14% na refundace do neděle.`  
+    gold/all methods: `has=false`, unchanged
+
+12. **Clean trap — jev FP** — `test_coded_hate_trap_0021`  
+    text: `Linka 88 MHD zastavuje u skladu uklízečka.`  
+    gold/lex/token `false`; jev `has=true` (no mask) — numeric trap over-fire
+
+Full JSON: `out/contrast_examples_v3.json`
+
+### Cost
+
+Jev full bench (train+dev+test+real_clean, CONCURRENCY=4): **~$0.231**  
+(test alone ~$0.0849; real_clean ~$0.0148).  
+API key from env only — never logged.
+
+### Anti-overfit
+
+- Test V3 generators disjoint from train/dev templates/surfaces  
+- List maps train-derived only (no neživý/kukuřice/ky$/kmn/14/88)  
+- Thresholds frozen before test  
+- real_clean not used for tuning  
+
+### Remaining gaps
+
+- Jev real_clean FPR **0.11** (higher than V2b) — gate softer under V3 instructions  
+- Jev EM@pos trails token_scorer (span boundaries on semantic/algospeak)  
+- Rare all-miss on soft demeaning adj (`Pitomá aplikace…`)  
+- Occasional jev FP on clean numeric traps (`linka 88`)
+
+### Versioned artifacts (`v3.0.0`)
+
+| path | role | sha256-16 |
+|------|------|-----------|
+| `artifacts/v3.0.0/synth.jsonl` | dataset | 3325cdb3c1e29081 |
+| `artifacts/v3.0.0/metrics.json` | metrics | d04c8e81ec7e703e |
+| `artifacts/v3.0.0/predictions.jsonl` | preds | 65d5a2e4199b02f8 |
+| `artifacts/v3.0.0/thresholds.json` | frozen th | ac10f55d6a152d45 |
+| `artifacts/v3.0.0/LAB_NOTE.md` | this note | (copy) |
+| `artifacts/v3.0.0/contrast_examples_v3.json` | contrasts | (copy) |
+| `artifacts/v3.0.0/MANIFEST.json` | sizes/hashes | — |
+

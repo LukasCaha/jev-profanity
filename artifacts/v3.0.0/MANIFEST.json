@@ -1,0 +1,50 @@
+{
+  "version": "v3.0.0",
+  "tag": "v3.0.0",
+  "created_at": "2026-09-18T23:42:26.529Z",
+  "timezone_note": "Europe/Prague UTC+2",
+  "seed": "20260919v3",
+  "seed_int": 202609193,
+  "n_total": 1834,
+  "splits": {
+    "train": 738,
+    "dev": 240,
+    "test": 656,
+    "real_clean": 200
+  },
+  "estimated_jev_cost_usd_full": 0.231,
+  "winners": {
+    "test_f1": "jev",
+    "test_exact_match_positive": "token_scorer",
+    "real_clean_lowest_fpr": "lexicon",
+    "rude_highest_recall": "jev",
+    "test_lowest_cost": "lexicon"
+  },
+  "files": {
+    "synth.jsonl": {
+      "sha256_16": "3325cdb3c1e29081",
+      "bytes": 515109
+    },
+    "metrics.json": {
+      "sha256_16": "d04c8e81ec7e703e",
+      "bytes": 37438
+    },
+    "predictions.jsonl": {
+      "sha256_16": "65d5a2e4199b02f8",
+      "bytes": 2957539
+    },
+    "thresholds.json": {
+      "sha256_16": "ac10f55d6a152d45",
+      "bytes": 268
+    },
+    "LAB_NOTE.md": {
+      "sha256_16": "d46923ed7afd4f82",
+      "bytes": 23220
+    },
+    "contrast_examples_v3.json": {
+      "sha256_16": "fc0ccdab9a76d6d6",
+      "bytes": 8942
+    }
+  },
+  "note": "Ready to tag v3.0.0 on github.com/LukasCaha/jev-profanity (publish handled separately)."
+}

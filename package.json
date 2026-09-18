@@ -1,9 +1,9 @@
 {
-  "name": "jev-profanity",
-  "version": "2.0.0",
+  "name": "jev-lab-profanity-bench",
+  "version": "3.0.0",
   "private": true,
   "type": "module",
-  "description": "Jev vs lexicon vs hybrid profanity/rude detect+censor benchmark (Czech-first external-comms filter lab)",
+  "description": "Czech+English profanity detect+censor benchmark v3 (algospeak/short-codes/semantic/hate-code; Czech-first; Jev vs lexicon vs token_scorer)",
   "scripts": {
     "generate": "node data/generate.mjs",
     "bench": "node run_bench.mjs",

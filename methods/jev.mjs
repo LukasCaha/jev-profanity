@@ -1,15 +1,22 @@
 /**
- * Method 1 — Jev v2b (TypeSafe System One).
+ * Method 1 — Jev v3 (TypeSafe System One).
  *
  * Pipeline: gate → candidates (tokens + spaced + dotted + glued +
  * generic CS/EN insult bigrams/trigrams) → span Nouls → verify.
  *
- * V2b policy (external company communication filter):
- *   POSITIVE = vulgar swear OR rude/insulting/demeaning language
- *              unsuitable for a company's public website / external
- *              customer communication.
- *   NEGATIVE = Scunthorpe / phonetic clean traps, ordinary criticism
- *              without demeaning digs, real_clean reviews.
+ * V3 policy (external company communication filter, keeps V2b):
+ *   POSITIVE = vulgar swear OR rude/insulting/demeaning OR
+ *              algospeak/coded attacks (unalive, seggs, corn-as-porn joke,
+ *              neživý, sebe-odinstalování, kukuřice-hostile), short suicidal
+ *              insult codes (kys/ky$/kms/kmn), Czech chat shortenings used as
+ *              insults (tvl/twl), subculture flame slurs, semantic
+ *              weaponization (polite surface + demeaning intent), and
+ *              numeric hate dogwhistles (14, 88, 14/88) in clearly hateful
+ *              review sentences.
+ *   NEGATIVE = Scunthorpe traps; bare numbers in prices/addresses/lines
+ *              ("sleva 14%", "linka 88"); ordinary factual complaints;
+ *              educational/meta mention of codes without hostile attack;
+ *              real_clean reviews.
  *
  * Do NOT hardcode test sentences or test-only wordlists.
  */
@@ -88,6 +95,11 @@ const INSULT_STARTERS = new Set(
     "líný", "líná", "neprijemny", "nepříjemný", "neprijemna", "nepříjemná",
     "arogantni", "arogantní", "ten", "ta", "nicemu", "ničemu", "frajer",
     "hlupak", "hlupák", "dedek", "dědek", "baba", "bába", "krava", "kráva",
+    // V3 cues (generic; not test sentences)
+    "unalive", "seggs", "neizivy", "neživý", "neiziva", "neživá",
+    "kukurice", "kukuřice", "kys", "kms", "kmn", "tvl", "twl",
+    "milá", "mila", "užitečný", "uzitecny", "užitečná", "uzitecna",
+    "moc", "refreshingly", "delightfully", "brave",
   ].map(fold),
 );
 
@@ -242,19 +254,19 @@ export function buildCandidates(text, maxCandidates = 24) {
 function gateQuestions() {
   return {
     has_profanity: noul(
-      "Does this text contain language unsuitable for a company's public website or external customer communication — either (a) classic swear/vulgar/sexual abuse words (including obfuscations: leet, spaced letters, dots, ZWSP, homoglyphs, partial self-censor like f*ck), OR (b) rude, insulting, demeaning digs aimed at a person/role (ageist/sexist/ability digs, calling someone useless/pathetic/moronic/hlupák/frajer, multiword digs like demeaning adj+noun)?",
+      "Does this text contain language unsuitable for a company's public website or external customer communication? Flag true for ANY of: (a) classic swear/vulgar/sexual abuse (incl. obfuscations: leet, spaced, dots, ZWSP, homoglyphs, f*ck); (b) rude/insulting/demeaning digs (hlupák, frajer, useless/pathetic/moronic, demeaning adj+noun); (c) algospeak attacks used as insults (unalive, sewer slide, seggs, corn-as-porn joke, grape-as-SA, neživý/neživá, sebe-odinstalování, kukuřice in hostile review); (d) short suicidal-insult codes (kys, ky$, kms, kmn) or Czech insult abbreviations (tvl, twl = ty vole) as attacks; (e) subculture/football/gaming flame slurs as attacks; (f) semantic weaponization — polite surface with clear demeaning intent (e.g. moc milá paní na svůj věk, užitečný jako…); (g) numeric hate dogwhistles 14 / 88 / 14/88 inside a clearly hateful review sentence.",
       {
-        true: "Contains a swear/vulgarity OR a rude/insulting/demeaning dig (toward a person, role, OR product/service — e.g. calling something worthless/stupid/moronic, Czech demeaning adj+noun) that would be inappropriate on a public company site.",
+        true: "Contains swear/vulgarity, demeaning dig, hostile algospeak, short insult codes, subculture flame, weaponized compliment, OR hate-code numbers in a hateful sentence — unsuitable for a public company site.",
         false:
-          "Clean for external company communication. Ordinary factual complaints without demeaning digs are fine (late, broken, slow as neutral facts). Near-miss words like classic, shiitake, Kundera, kurýr, cocktail, Scunthorpe, assess are NOT violations.",
+          "Clean for external company communication. Ordinary factual complaints (late/broken/slow) without digs are fine. Near-miss Scunthorpe words (classic, shiitake, Kundera, kurýr) are fine. Bare numbers in prices/addresses/transit (sleva 14%, linka 88, byt 88, článek 14) are NOT hate. Educational/meta mention of codes without hostile attack is fine.",
       },
     ),
     severity: score(
       "How unsuitable is this text for a company's public website / external customer communication?",
       [
-        "None — clean / polite / factual",
-        "Mild rude dig or light slang (still unsuitable for public site)",
-        "Strong swear, abuse, or clearly demeaning insult",
+        "None — clean / polite / factual / bare numbers in prices or addresses",
+        "Mild rude dig, light coded slang, or soft semantic dig (still unsuitable for public site)",
+        "Strong swear, abuse, hostile algospeak, suicidal-insult code, hate dogwhistle, or clearly demeaning insult",
       ],
     ),
   };
@@ -272,9 +284,9 @@ function spanQuestions(candidates) {
     q[c.id] = noul(
       `Is the candidate span "${c.display}" (offsets ${c.start}-${c.end}, kind=${c.kind}, norm≈"${c.norm || ""}") itself a swear/vulgarity OR a rude/insulting/demeaning dig that should be censored for a company's public website?${hint}`,
       {
-        true: "This span is a swear/vulgar insult OR a demeaning rude dig (including obfuscated swears). For glued stems, true only for the abusive morpheme. For multiword digs, true for the insult phrase words.",
+        true: "This span is a swear/vulgar insult, demeaning dig, hostile algospeak, short insult code, flame slur, weaponized compliment piece, or hate-code number in hate context (incl. obfuscations). For glued stems, true only for the abusive morpheme.",
         false:
-          "Not something to censor — ordinary word, punctuation, or near-miss lookalike (classic, Scunthorpe, kurýr). Neutral role nouns alone (driver, cleaner, manager) without a demeaning modifier are false.",
+          "Not something to censor — ordinary word, punctuation, near-miss (classic, Scunthorpe, kurýr), or bare number in price/address/line (14%, linka 88). Neutral role nouns alone without a demeaning modifier are false.",
       },
     );
   }
@@ -284,11 +296,11 @@ function spanQuestions(candidates) {
 function verifyQuestions() {
   return {
     still_dirty: noul(
-      "Does this (already partially censored) text STILL contain remaining uncensored swears OR rude/insulting/demeaning digs unsuitable for a company's public website?",
+      "Does this (already partially censored) text STILL contain remaining uncensored swears, demeaning digs, hostile algospeak, short insult codes, hate dogwhistles, or weaponized insults unsuitable for a company's public website?",
       {
-        true: "Yes, uncensored swear words or demeaning digs remain.",
+        true: "Yes, uncensored violations remain (swears, digs, codes, algospeak, hate numbers).",
         false:
-          "No remaining swears or demeaning digs; asterisks for censored parts are fine. Ordinary factual wording left intact is correct.",
+          "No remaining violations; asterisks for censored parts are fine. Bare prices/line numbers and ordinary factual wording left intact are correct.",
       },
     ),
   };
@@ -315,7 +327,7 @@ export async function detectAndCensor(text, opts = {}) {
       state: {
         text,
         policy:
-          "EXTERNAL COMPANY COMMUNICATION FILTER. Flag (has_profanity) if text has vulgar swears OR rude/insulting/demeaning language unsuitable for a public company website. POSITIVE includes: classic swears; demeaning digs at people/roles; demeaning digs at products/services (worthless/stupid/moronic system or app; Czech pitomý/hloupý/trapný + noun; k ničemu). NEGATIVE: Scunthorpe/near-miss clean words; polite or merely factual complaints (late/broken/slow) without digs; praise.",
+          "EXTERNAL COMPANY COMMUNICATION FILTER (V3). Flag if vulgar swears OR rude/demeaning digs OR hostile algospeak (unalive/seggs/neživý/kukuřice-as-porn-joke) OR short insult codes (kys/ky$/kms/kmn/tvl/twl) OR subculture flame OR semantic weaponization (polite+demeaning) OR numeric hate codes 14/88 in a hateful sentence. NEGATIVE: Scunthorpe; bare 14%/linka 88/prices/addresses; factual complaints without digs; praise; educational meta without attack.",
       },
       questions: gateQuestions(),
     },
@@ -370,7 +382,7 @@ export async function detectAndCensor(text, opts = {}) {
       parent: c.parent || null,
     })),
     instruction:
-      "Judge each candidate under EXTERNAL-COMMS policy. True = swear/vulgarity OR rude/demeaning dig unsuitable for a public company site. Mask ONLY the abusive morpheme when glued (e.g. worldčurák → mask čurák). For multiword digs, prefer the insult words. Scunthorpe substrings are false. Obfuscations (leet, dots, ZWSP as <ZWSP>, f*ck) of real swears are true.",
+      "Judge each candidate under EXTERNAL-COMMS V3 policy. True = swear/vulgarity OR rude/demeaning dig OR hostile algospeak token OR short insult code (kys/ky$/kms/kmn/tvl) OR subculture flame OR weaponized-compliment words OR hate-code number (14/88) in hate context. Mask ONLY the abusive morpheme when glued. For multiword digs, prefer the insult words. Scunthorpe and bare price/line numbers are false. Obfuscations (leet, dots, ZWSP as <ZWSP>, f*ck, ky$) of real swears/codes are true.",
   };
 
   const spanResp = await client.systemOne(

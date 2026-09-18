@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 /**
- * Profanity detect+censor bench v2b: jev / lexicon / token_scorer.
- * Policy: vulgar OR rude/demeaning (public-website unsafe) = positive.
+ * Profanity detect+censor bench v3: jev / lexicon / token_scorer.
+ * Policy: vulgar OR rude/demeaning OR V3 coded/algospeak/hate-code
+ * (public-website unsafe) = positive. Czech-first.
  *
  * Usage:
  *   node run_bench.mjs              # full
@@ -51,6 +52,7 @@ const EVASION_FAMILIES = [
   "foreign_phonetic",
   "word_inversion_light",
   "glued_affix",
+  "cs_evasion_train",
 ];
 const RUDE_FAMILIES = [
   "rude_not_profane_cs",
@@ -59,6 +61,24 @@ const RUDE_FAMILIES = [
   "rude_insult_en",
 ];
 const SCUNTHORPE_FAMILIES = ["substring_scunthorpe", "near_miss_clean"];
+/** V3 held-out test families (disjoint from train/dev). */
+const V3_TEST_FAMILIES = [
+  "algospeak_hostile",
+  "short_code_insult",
+  "subculture_slur",
+  "semantic_weapon",
+  "coded_hate",
+  "coded_hate_trap",
+];
+const V3_TRAIN_FAMILIES = [
+  "algospeak_train",
+  "short_code_train",
+  "semantic_weapon_train",
+  "coded_hate_train",
+  "subculture_train",
+  "coded_hate_trap_train",
+  "cs_evasion_train",
+];
 
 function parseArgs(argv) {
   const opts = {
@@ -392,10 +412,10 @@ function rudeRecall(predRows) {
 function summarize(allPreds, methods) {
   const out = {
     generated_at: new Date().toISOString(),
-    version: "2b",
+    version: "3",
     methods: {},
     note:
-      "v2b: Detection + rewrite; rude_* are POSITIVE (public-unsafe); Scunthorpe stays negative. Thresholds frozen on train/dev before test.",
+      "v3: Detection + rewrite; V2b rude=positive kept; +algospeak/short-codes/subculture/semantic-weapon/coded-hate (+clean numeric traps). Czech-first. Thresholds frozen on train/dev before test.",
   };
   for (const m of methods) {
     const rows = allPreds.filter((r) => r.method === m);
@@ -413,6 +433,8 @@ function summarize(allPreds, methods) {
       })(),
       evasion_families_test: familyBreakdown(rows, EVASION_FAMILIES, "test"),
       scunthorpe_near_miss_test: familyBreakdown(rows, SCUNTHORPE_FAMILIES, "test"),
+      v3_families_test: familyBreakdown(rows, V3_TEST_FAMILIES, "test"),
+      v3_families_train: familyBreakdown(rows, V3_TRAIN_FAMILIES, "train"),
     };
   }
   const testF1 = methods.map((m) => ({
@@ -468,8 +490,13 @@ async function main() {
         d.family === "sep_dot_uscore" ||
         d.family === "homoglyph_cyrillic" ||
         d.family === "partial_self_censor" ||
+        d.family === "algospeak_hostile" ||
+        d.family === "short_code_insult" ||
+        d.family === "semantic_weapon" ||
+        d.family === "coded_hate" ||
+        d.family === "coded_hate_trap" ||
         d.id === "test_canon_fuck_shit",
-    ).slice(0, 12);
+    ).slice(0, 20);
     const canon = docs.find((d) => d.id === "test_canon_fuck_shit");
     docs = [
       ...bySplit.train,
